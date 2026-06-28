@@ -17,6 +17,10 @@ import BentoDemo from "./pages/demos/Bento.jsx"
 import BrutalistDemo from "./pages/demos/Brutalist.jsx"
 import SketchDemo from "./pages/demos/Sketch.jsx"
 import TerminalDemo from "./pages/demos/Terminal.jsx"
+import WarmAsymmetricDemo from "./pages/demos/WarmAsymmetric.jsx"
+import WarmSageDemo from "./pages/demos/WarmSage.jsx"
+import WarmClayDemo from "./pages/demos/WarmClay.jsx"
+import WarmSerifDemo from "./pages/demos/WarmSerif.jsx"
 
 export default function App() {
   return (
@@ -42,6 +46,10 @@ export default function App() {
         <Route path="/demos/brutalist" element={<BrutalistDemo />} />
         <Route path="/demos/sketch" element={<SketchDemo />} />
         <Route path="/demos/terminal" element={<TerminalDemo />} />
+        <Route path="/demos/warm-asymmetric" element={<WarmAsymmetricDemo />} />
+        <Route path="/demos/warm-sage" element={<WarmSageDemo />} />
+        <Route path="/demos/warm-clay" element={<WarmClayDemo />} />
+        <Route path="/demos/warm-serif" element={<WarmSerifDemo />} />
       </Routes>
     </BrowserRouter>
   )

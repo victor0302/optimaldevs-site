@@ -72,6 +72,34 @@ const variants = [
       "Code-editor inspired. GitHub-dark background, monospace everywhere, syntax-highlighted hero, terminal-window mockups, YAML/JSON team data. Unmistakably 'built by developers'.",
     palette: ["#0D1117", "#161B22", "#7EE787", "#58A6FF"],
   },
+  {
+    slug: "warm-asymmetric",
+    name: "Warm — Asymmetric",
+    blurb:
+      "Warm minimalism, but the compositions break out of centered hero. Big italic Fraunces left-aligned, offset content blocks, sticky-section side titles, staggered team cards. Same palette, different rhythm.",
+    palette: ["#FAFAF8", "#F2F0EB", "#0D7377", "#1C1917"],
+  },
+  {
+    slug: "warm-sage",
+    name: "Warm — Sage",
+    blurb:
+      "Same warm minimalism, but the teal accent shifts to a botanical sage green. Calmer, slightly more earthy. Same layout language as the spec baseline.",
+    palette: ["#FAFAF8", "#F0EFE8", "#6B8E5E", "#E7EFE0"],
+  },
+  {
+    slug: "warm-clay",
+    name: "Warm — Clay",
+    blurb:
+      "Warm minimalism with the accent shifted to terracotta. Background warms up slightly to match. More personal, slightly handmade.",
+    palette: ["#FBF6F0", "#F2EBE0", "#C76F3E", "#F5E0D2"],
+  },
+  {
+    slug: "warm-serif",
+    name: "Warm — Serif",
+    blurb:
+      "Leans hard into Fraunces. Italic body callouts, serif eyebrows, italic nav links, Roman numerals for sections. Most literary of the warm variants.",
+    palette: ["#FAFAF8", "#F2F0EB", "#0D7377", "#1C1917"],
+  },
 ]
 
 export default function DemosIndex() {

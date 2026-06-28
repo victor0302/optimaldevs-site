@@ -2,6 +2,7 @@ import { Handshake, Hammer, Key, Check } from "lucide-react"
 import { SectionTitle } from "../components/ui/SectionTitle.jsx"
 import { Button } from "../components/ui/Button.jsx"
 import { FadeIn } from "../components/ui/FadeIn.jsx"
+import { PageMeta } from "../components/ui/PageMeta.jsx"
 
 const steps = [
   {
@@ -45,6 +46,10 @@ const OPEN_SLOTS = 2
 export default function Partnership() {
   return (
     <>
+      <PageMeta
+        title="Partnership"
+        description="A free-website partnership program for small businesses. We build at no cost; you pay only for domain and hosting."
+      />
       <section className="pt-20 pb-16 md:pt-28 md:pb-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <SectionTitle

@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom"
 
 const baseClasses =
-  "inline-flex items-center justify-center font-medium text-[0.9rem] px-5 py-2 rounded-button transition-colors duration-200 focus-visible:outline-2"
+  "inline-flex items-center justify-center font-medium text-[0.9rem] px-5 py-2 rounded-button transition-colors duration-200 focus-visible:outline-2 disabled:opacity-60 disabled:cursor-not-allowed"
 
 const variants = {
-  primary:
-    "bg-accent text-white hover:bg-[#0a5e61]",
+  primary: "bg-accent text-white hover:bg-[#0a5e61] disabled:hover:bg-accent",
   ghost:
-    "border border-accent text-accent hover:bg-accent-light",
+    "border border-accent text-accent hover:bg-accent-light disabled:hover:bg-transparent",
 }
 
 export function Button({
@@ -31,12 +30,12 @@ export function Button({
   }
 
   if (href) {
+    const isExternal = /^https?:\/\//.test(href)
     return (
       <a
         href={href}
         className={classes}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         {...rest}
       >
         {children}

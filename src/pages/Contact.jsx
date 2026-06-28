@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { CheckCircle2, Mail } from "lucide-react"
 import { SectionTitle } from "../components/ui/SectionTitle.jsx"
 import { Button } from "../components/ui/Button.jsx"
+import { PageMeta } from "../components/ui/PageMeta.jsx"
 import { useReducedMotion } from "../hooks/useReducedMotion.js"
 
 const SUBJECTS = [
@@ -79,6 +80,10 @@ export default function Contact() {
 
   return (
     <>
+      <PageMeta
+        title="Contact"
+        description="Get in touch with the OptimalDevs team — partnership inquiries, project quotes, or general questions."
+      />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <SectionTitle

@@ -1,11 +1,16 @@
 import { SectionTitle } from "../components/ui/SectionTitle.jsx"
 import { TeamCard } from "../components/ui/TeamCard.jsx"
 import { FadeIn } from "../components/ui/FadeIn.jsx"
+import { PageMeta } from "../components/ui/PageMeta.jsx"
 import { team } from "../data/team.js"
 
 export default function Team() {
   return (
     <>
+      <PageMeta
+        title="Team"
+        description="The four developers behind OptimalDevs — each with a specialty, all committed to good work."
+      />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle

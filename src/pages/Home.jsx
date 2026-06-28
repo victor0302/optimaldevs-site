@@ -1,16 +1,17 @@
-import { SectionTitle } from "../components/ui/SectionTitle.jsx"
+import { Hero } from "../components/home/Hero.jsx"
+import { WhatWeDo } from "../components/home/WhatWeDo.jsx"
+import { PartnershipCallout } from "../components/home/PartnershipCallout.jsx"
+import { TeamTeaser } from "../components/home/TeamTeaser.jsx"
+import { ContactTeaser } from "../components/home/ContactTeaser.jsx"
 
 export default function Home() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-24">
-      <SectionTitle
-        eyebrow="Home"
-        title="We build websites small businesses actually use."
-        subtitle="OptimalDevs is a lean dev team helping local businesses get online — with the design, development, and infrastructure to back it up."
-      />
-      <p className="mt-8 text-sm text-muted">
-        Home page sections arrive in Phase 2.
-      </p>
-    </div>
+    <>
+      <Hero />
+      <WhatWeDo />
+      <PartnershipCallout />
+      <TeamTeaser />
+      <ContactTeaser />
+    </>
   )
 }

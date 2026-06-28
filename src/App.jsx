@@ -6,6 +6,7 @@ import Team from "./pages/Team.jsx"
 import Portfolio from "./pages/Portfolio.jsx"
 import Partnership from "./pages/Partnership.jsx"
 import Contact from "./pages/Contact.jsx"
+import NotFound from "./pages/NotFound.jsx"
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/partnership" element={<Partnership />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

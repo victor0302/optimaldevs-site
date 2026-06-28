@@ -2,11 +2,16 @@ import { SectionTitle } from "../components/ui/SectionTitle.jsx"
 import { ServiceCard } from "../components/ui/ServiceCard.jsx"
 import { Button } from "../components/ui/Button.jsx"
 import { FadeIn } from "../components/ui/FadeIn.jsx"
+import { PageMeta } from "../components/ui/PageMeta.jsx"
 import { services } from "../data/services.js"
 
 export default function Services() {
   return (
     <>
+      <PageMeta
+        title="Services"
+        description="Website design, online presence, security, DevOps, and infrastructure for small businesses."
+      />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle

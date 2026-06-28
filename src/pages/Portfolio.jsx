@@ -3,6 +3,7 @@ import { SectionTitle } from "../components/ui/SectionTitle.jsx"
 import { PortfolioCard } from "../components/ui/PortfolioCard.jsx"
 import { Button } from "../components/ui/Button.jsx"
 import { FadeIn } from "../components/ui/FadeIn.jsx"
+import { PageMeta } from "../components/ui/PageMeta.jsx"
 import { portfolio } from "../data/portfolio.js"
 
 function EmptyState() {
@@ -32,6 +33,10 @@ export default function Portfolio() {
 
   return (
     <>
+      <PageMeta
+        title="Portfolio"
+        description="Projects we've built — real businesses, real results."
+      />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle

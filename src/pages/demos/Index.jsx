@@ -37,6 +37,41 @@ const variants = [
       "Near-pure white, black ink, monospace eyebrows, massive whitespace. Lets the work speak. Confident, restrained — feels like a high-end design studio.",
     palette: ["#FFFFFF", "#F4F4F4", "#111111", "#0D7377"],
   },
+  {
+    slug: "swiss",
+    name: "Swiss Grid",
+    blurb:
+      "Strict International Typographic Style. Modular 12-column grid, heavy black sans, bright red accent dots, ruler-like dividers, big section numbers. Disciplined and established.",
+    palette: ["#FFFFFF", "#000000", "#E11D48", "#999999"],
+  },
+  {
+    slug: "bento",
+    name: "Bento SaaS",
+    blurb:
+      "Modern SaaS landing page. Bento grid hero with mixed card sizes, indigo→purple gradient accents, frosted nav, glassy CTA blocks. Apple/Linear marketing energy.",
+    palette: ["#F5F7FA", "#FFFFFF", "#6366F1", "#0F172A"],
+  },
+  {
+    slug: "brutalist",
+    name: "Brutalist",
+    blurb:
+      "Raw and oversized. Cream paper + black ink + hot orange, thick 4px borders everywhere, oversized uppercase mono, no rounding, no shadows. Anti-design confidence.",
+    palette: ["#E8E4D9", "#000000", "#FF4500", "#FFFFFF"],
+  },
+  {
+    slug: "sketch",
+    name: "Sketch / Notebook",
+    blurb:
+      "Notebook paper aesthetic. Cream paper background, hand-drawn SVG underlines, dashed dividers, highlighted words, slightly tilted cards with hard offset shadows. Personal and warm.",
+    palette: ["#FAF7F0", "#FFE066", "#1A4A7A", "#1E1E1E"],
+  },
+  {
+    slug: "terminal",
+    name: "Terminal / Dev-Shop",
+    blurb:
+      "Code-editor inspired. GitHub-dark background, monospace everywhere, syntax-highlighted hero, terminal-window mockups, YAML/JSON team data. Unmistakably 'built by developers'.",
+    palette: ["#0D1117", "#161B22", "#7EE787", "#58A6FF"],
+  },
 ]
 
 export default function DemosIndex() {

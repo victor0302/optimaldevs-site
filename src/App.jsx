@@ -12,6 +12,11 @@ import EditorialDemo from "./pages/demos/Editorial.jsx"
 import BoldDemo from "./pages/demos/Bold.jsx"
 import FriendlyDemo from "./pages/demos/Friendly.jsx"
 import StudioDemo from "./pages/demos/Studio.jsx"
+import SwissDemo from "./pages/demos/Swiss.jsx"
+import BentoDemo from "./pages/demos/Bento.jsx"
+import BrutalistDemo from "./pages/demos/Brutalist.jsx"
+import SketchDemo from "./pages/demos/Sketch.jsx"
+import TerminalDemo from "./pages/demos/Terminal.jsx"
 
 export default function App() {
   return (
@@ -32,6 +37,11 @@ export default function App() {
         <Route path="/demos/bold" element={<BoldDemo />} />
         <Route path="/demos/friendly" element={<FriendlyDemo />} />
         <Route path="/demos/studio" element={<StudioDemo />} />
+        <Route path="/demos/swiss" element={<SwissDemo />} />
+        <Route path="/demos/bento" element={<BentoDemo />} />
+        <Route path="/demos/brutalist" element={<BrutalistDemo />} />
+        <Route path="/demos/sketch" element={<SketchDemo />} />
+        <Route path="/demos/terminal" element={<TerminalDemo />} />
       </Routes>
     </BrowserRouter>
   )

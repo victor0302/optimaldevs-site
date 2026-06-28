@@ -44,7 +44,7 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link
           to="/"
-          className="font-sans font-bold text-accent text-lg tracking-tight"
+          className="font-display font-medium text-ink text-[1.5rem] tracking-tight leading-none"
         >
           OptimalDevs
         </Link>

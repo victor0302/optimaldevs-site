@@ -17,6 +17,9 @@ dist-ssr
 .env.*
 !.env.example
 
+# personal learning notes (not for the team)
+notes/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -46,7 +46,7 @@ export default function Contact() {
   const [submitState, setSubmitState] = useState({ status: "idle", message: "" })
 
   const onSubmit = async (data) => {
-    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT
+    const endpoint = import.meta.env.VITE_CONTACT_API_ENDPOINT
     if (!endpoint) {
       setSubmitState({
         status: "error",

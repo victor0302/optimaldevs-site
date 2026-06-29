@@ -10,6 +10,7 @@ env:
   AWS_REGION: us-east-1
   AWS_S3_BUCKET: optimaldevs-site
   AWS_CLOUDFRONT_DISTRIBUTION_ID: E1IHT7N6P3U2Y9
+  VITE_CONTACT_API_ENDPOINT: https://vf95n20ew8.execute-api.us-east-1.amazonaws.com/contact
 
 jobs:
   build:

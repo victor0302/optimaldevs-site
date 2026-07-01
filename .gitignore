@@ -20,6 +20,9 @@ dist-ssr
 # personal learning notes (not for the team)
 notes/
 
+# session handoff document (used to transfer context between AI agents)
+HANDOFF.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

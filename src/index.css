@@ -29,8 +29,7 @@
   }
 
   h1, h2, h3 {
-    font-family: "Fraunces", ui-serif, Georgia, serif;
-    font-variation-settings: "WONK" 0;
+    font-family: "Newsreader", ui-serif, Georgia, serif;
     color: var(--color-text-primary);
   }
 

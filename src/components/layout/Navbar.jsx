@@ -37,6 +37,12 @@ export function Navbar() {
     ? "bg-transparent border-transparent"
     : "bg-bg/90 backdrop-blur border-border"
 
+  const handleSamePathClick = (to) => {
+    if (location.pathname === to) {
+      window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" })
+    }
+  }
+
   return (
     <header
       className={`sticky top-0 z-40 border-b transition-colors duration-300 ${headerClass}`}
@@ -44,6 +50,7 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link
           to="/"
+          onClick={() => handleSamePathClick("/")}
           className="font-display font-medium text-ink text-[1.5rem] tracking-tight leading-none"
         >
           OptimalDevs
@@ -55,6 +62,7 @@ export function Navbar() {
               key={link.to}
               to={link.to}
               end={link.to === "/"}
+              onClick={() => handleSamePathClick(link.to)}
               className={({ isActive }) =>
                 `relative text-sm text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-px after:bg-accent after:transition-all after:duration-200 ${
                   isActive ? "text-accent after:w-full" : "after:w-0 hover:after:w-full"
@@ -99,6 +107,7 @@ export function Navbar() {
                   key={link.to}
                   to={link.to}
                   end={link.to === "/"}
+                  onClick={() => handleSamePathClick(link.to)}
                   className={({ isActive }) =>
                     `text-base ${isActive ? "text-accent" : "text-ink/80"}`
                   }

@@ -6,7 +6,7 @@ export const services = [
     description:
       "Custom websites built to load fast, look great, and work on every device.",
     details: [
-      "Custom design — no templates",
+      "Custom design, no templates",
       "Mobile responsive",
       "Performance optimized",
       "SEO foundations",
@@ -17,7 +17,7 @@ export const services = [
     icon: "Share2",
     title: "Online Presence",
     description:
-      "Getting your business found — Google, Facebook, and beyond.",
+      "Getting your business found on Google, Facebook, and beyond.",
     details: [
       "Google Business Profile setup",
       "Facebook page creation",

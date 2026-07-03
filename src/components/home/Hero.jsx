@@ -17,7 +17,7 @@ export function Hero() {
           We build websites small businesses actually use.
         </h1>
         <p className="mt-6 text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-          OptimalDevs is a lean dev team helping local businesses get online —
+          OptimalDevs is a lean dev team helping local businesses get online,
           with the design, development, and infrastructure to back it up.
         </p>
         <div className="mt-10 flex flex-wrap gap-4 justify-center">

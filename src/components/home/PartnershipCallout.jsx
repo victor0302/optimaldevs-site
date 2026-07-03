@@ -13,7 +13,7 @@ export function PartnershipCallout() {
           <p className="mt-5 text-muted text-lg max-w-2xl mx-auto leading-relaxed">
             We're a growing dev team looking to do good work on real projects.
             You're a small business that needs to get online. We build your site
-            at no cost — you only pay for your domain and hosting.
+            at no cost. You only pay for your domain and hosting.
           </p>
           <div className="mt-8">
             <Button variant="primary" to="/partnership">

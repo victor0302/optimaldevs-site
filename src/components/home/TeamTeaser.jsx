@@ -12,7 +12,7 @@ export function TeamTeaser() {
           <SectionTitle
             eyebrow="The team"
             title="A small team. Serious about craft."
-            subtitle="Four developers, each with a specialty — close enough to coordinate, focused enough to ship good work."
+            subtitle="Four developers, each with a specialty. Close enough to coordinate, focused enough to ship good work."
           />
         </FadeIn>
 

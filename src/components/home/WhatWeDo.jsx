@@ -8,13 +8,13 @@ const items = [
     icon: Code2,
     title: "Web Development",
     description:
-      "Custom websites designed and built from scratch — fast, accessible, and tailored to your business.",
+      "Custom websites designed and built from scratch. Fast, accessible, and tailored to your business.",
   },
   {
     icon: Share2,
     title: "Online Presence",
     description:
-      "Google Business, Facebook, local SEO — the pieces that help customers actually find you.",
+      "Google Business, Facebook, local SEO. The pieces that help customers actually find you.",
   },
   {
     icon: ShieldCheck,
@@ -32,7 +32,7 @@ export function WhatWeDo() {
           <SectionTitle
             eyebrow="What we do"
             title="A small team, full-stack coverage."
-            subtitle="Three core areas of work — designed to take a small business from no online presence to a polished, working site."
+            subtitle="Three core areas of work, designed to take a small business from no online presence to a polished, working site."
           />
         </FadeIn>
 

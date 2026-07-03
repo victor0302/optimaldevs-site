@@ -9,14 +9,14 @@ export default function Team() {
     <>
       <PageMeta
         title="Team"
-        description="The four developers behind OptimalDevs — each with a specialty, all committed to good work."
+        description="The four developers behind OptimalDevs, each with a specialty and all committed to good work."
       />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
             eyebrow="Team"
             title="The people behind OptimalDevs"
-            subtitle="We're a team of four developers — each with a specialty, all committed to doing good work."
+            subtitle="We're a team of four developers, each with a specialty, all committed to doing good work."
           />
         </div>
       </section>

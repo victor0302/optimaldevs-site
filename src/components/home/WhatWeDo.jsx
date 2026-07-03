@@ -77,7 +77,7 @@ export function WhatWeDo() {
             ref={scrollRef}
             role="region"
             aria-label="Services"
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 pl-8 md:pl-12 scroll-pl-8 md:scroll-pl-12"
           >
             {services.map((service) => {
               const Icon = iconMap[service.icon]

@@ -13,7 +13,7 @@ export default {
         "accent-light": "var(--color-accent-light)",
       },
       fontFamily: {
-        display: ['"Fraunces"', "ui-serif", "Georgia", "serif"],
+        display: ['"Newsreader"', "ui-serif", "Georgia", "serif"],
         sans: ['"Inter"', "ui-sans-serif", "system-ui", "sans-serif"],
       },
       letterSpacing: {

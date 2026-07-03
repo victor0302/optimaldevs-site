@@ -29,7 +29,7 @@ export const team = [
   },
   {
     id: 3,
-    name: "Luis",
+    name: "Luis Padilla",
     role: "DevOps Lead",
     specialty: "DevOps & Full Stack",
     bio: "Owns the pipeline — CI/CD, deployments, and making sure every site goes live without a hitch and stays that way.",

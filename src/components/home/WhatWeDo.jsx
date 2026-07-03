@@ -65,11 +65,15 @@ export function WhatWeDo() {
 
         <div className="mt-12 relative">
           <div
-            className="pointer-events-none absolute inset-y-0 left-0 w-8 md:w-12 bg-gradient-to-r from-bg to-transparent z-10"
+            className={`pointer-events-none absolute inset-y-0 left-0 w-8 md:w-12 bg-gradient-to-r from-bg to-transparent z-10 transition-opacity ${
+              canScrollLeft ? "opacity-100" : "opacity-0"
+            }`}
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute inset-y-0 right-0 w-8 md:w-12 bg-gradient-to-l from-bg to-transparent z-10"
+            className={`pointer-events-none absolute inset-y-0 right-0 w-8 md:w-12 bg-gradient-to-l from-bg to-transparent z-10 transition-opacity ${
+              canScrollRight ? "opacity-100" : "opacity-0"
+            }`}
             aria-hidden="true"
           />
 
@@ -77,7 +81,7 @@ export function WhatWeDo() {
             ref={scrollRef}
             role="region"
             aria-label="Services"
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 px-8 md:px-12 scroll-px-8 md:scroll-px-12"
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
           >
             {services.map((service) => {
               const Icon = iconMap[service.icon]

@@ -16,7 +16,7 @@ function EmptyState() {
         Projects coming soon
       </h3>
       <p className="mt-3 text-muted max-w-md mx-auto">
-        Our first partnerships are underway. Check back shortly — we'll showcase
+        Our first partnerships are underway. Check back shortly. We'll showcase
         every project we ship right here.
       </p>
       <div className="mt-7">
@@ -35,14 +35,14 @@ export default function Portfolio() {
     <>
       <PageMeta
         title="Portfolio"
-        description="Projects we've built — real businesses, real results."
+        description="Projects we've built for real businesses, with real results."
       />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
             eyebrow="Portfolio"
             title="Our Work"
-            subtitle="Projects we've built — real businesses, real results."
+            subtitle="Projects we've built for real businesses, with real results."
           />
         </div>
       </section>

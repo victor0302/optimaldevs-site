@@ -141,8 +141,8 @@ export default function Partnership() {
             </h2>
             <p className="mt-5 text-muted text-base leading-relaxed">
               We're building our portfolio and sharpening our skills on real
-              projects. Working with real businesses — real deadlines, real
-              requirements — is how we grow. You get a professional site at
+              projects. Working with real businesses, with their real deadlines
+              and real requirements, is how we grow. You get a professional site at
               near-zero cost. We get experience and a portfolio piece. It's a
               fair trade.
             </p>

@@ -17,7 +17,7 @@ export default function Services() {
           <SectionTitle
             eyebrow="Services"
             title="What We Build"
-            subtitle="From a first website to full infrastructure — we handle the parts that matter for small businesses."
+            subtitle="From a first website to full infrastructure, we handle the parts that matter for small businesses."
           />
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function Services() {
             </h2>
             <p className="mt-4 text-muted">
               Tell us about your business and we'll help you scope what makes
-              sense — no pressure.
+              sense. No pressure.
             </p>
             <div className="mt-8">
               <Button variant="primary" to="/contact">

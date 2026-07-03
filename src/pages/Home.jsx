@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        description="OptimalDevs — a lean dev team helping small businesses get online with custom websites, online presence, and infrastructure."
+        description="OptimalDevs is a lean dev team helping small businesses get online with custom websites, online presence, and infrastructure."
       />
       <Hero />
       <WhatWeDo />

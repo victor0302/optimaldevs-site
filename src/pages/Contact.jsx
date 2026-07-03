@@ -82,14 +82,14 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact"
-        description="Get in touch with the OptimalDevs team — partnership inquiries, project quotes, or general questions."
+        description="Get in touch with the OptimalDevs team for partnership inquiries, project quotes, or general questions."
       />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <SectionTitle
             eyebrow="Contact"
             title="Let's talk."
-            subtitle="Whether you're interested in a partnership or just have questions — we're easy to reach."
+            subtitle="Whether you're interested in a partnership or just have questions, we're easy to reach."
             align="center"
           />
         </div>
@@ -113,7 +113,7 @@ export default function Contact() {
                   Message sent.
                 </h3>
                 <p className="mt-3 text-muted">
-                  Thanks for reaching out — we'll get back to you within 1–2
+                  Thanks for reaching out. We'll get back to you within 1–2
                   business days.
                 </p>
                 <div className="mt-6">
@@ -207,7 +207,7 @@ export default function Contact() {
                         required: "Tell us a bit about what you're looking for.",
                         minLength: {
                           value: 10,
-                          message: "A few more words please — at least 10 characters.",
+                          message: "A few more words please, at least 10 characters.",
                         },
                       })}
                     />

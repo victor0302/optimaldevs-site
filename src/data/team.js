@@ -4,7 +4,7 @@ export const team = [
     name: "Victor Salazar",
     role: "CEO & Project Manager",
     specialty: "Full Stack Development",
-    bio: "Leads OptimalDevs — from finding clients to shipping their websites. Focused on making sure every project runs smoothly and every client feels taken care of.",
+    bio: "Leads OptimalDevs, from finding clients to shipping their websites. Focused on making sure every project runs smoothly and every client feels taken care of.",
     photo: "/images/team/placeholder.jpg",
     links: {
       website: "https://github.com/victor0302/portfolio",
@@ -18,7 +18,7 @@ export const team = [
     name: "Diyor Rudov",
     role: "Security Lead",
     specialty: "Security & Full Stack",
-    bio: "Keeps OptimalDevs projects secure from the ground up — audits, hardening, and making sure no client site is left vulnerable.",
+    bio: "Keeps OptimalDevs projects secure from the ground up with audits, hardening, and making sure no client site is left vulnerable.",
     photo: "/images/team/placeholder.jpg",
     links: {
       website: "https://0xdiyor.com",
@@ -32,7 +32,7 @@ export const team = [
     name: "Luis Padilla",
     role: "DevOps Lead",
     specialty: "DevOps & Full Stack",
-    bio: "Owns the pipeline — CI/CD, deployments, and making sure every site goes live without a hitch and stays that way.",
+    bio: "Owns the pipeline. CI/CD, deployments, and making sure every site goes live without a hitch and stays that way.",
     photo: "/images/team/placeholder.jpg",
     links: {
       website: "",

@@ -7,9 +7,7 @@ export function Hero() {
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none flex items-center justify-center"
       >
-        <span className="font-display italic font-light text-accent opacity-[0.08] select-none whitespace-nowrap leading-none text-[18rem] md:text-[28rem]">
-          Optimal
-        </span>
+        <span className="font-display italic font-light text-accent opacity-[0.08] select-none whitespace-nowrap leading-none text-[18rem] md:text-[28rem] after:content-['Optimal']" />
       </div>
 
       <div className="relative max-w-5xl mx-auto px-6 text-center">

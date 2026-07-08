@@ -41,6 +41,9 @@ const responsibilities = [
   "Providing content: logo, photos, business info, copy (we can help guide this)",
 ]
 
+// Manually maintained: the number of partnership slots currently open. Update
+// this by hand as clients sign on (decrement) or slots free up (increment). It
+// drives the "N partnership slots open" line below.
 const OPEN_SLOTS = 2
 
 export default function Partnership() {

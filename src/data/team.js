@@ -1,3 +1,6 @@
+// Links: an empty string ("") hides that icon. TeamCard renders only populated
+// links via isUsableLink(), so a card degrades cleanly while entries are pending
+// (e.g. Vincent has none yet). Fill in a real URL or email to surface the icon.
 export const team = [
   {
     id: 1,

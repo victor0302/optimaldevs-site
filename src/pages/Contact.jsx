@@ -15,7 +15,7 @@ const SUBJECTS = [
   "Other",
 ]
 
-const GENERAL_EMAIL = "hello@optimaldevs.com"
+const GENERAL_EMAIL = "hello@optimaldevs.tech"
 
 function fieldClass(hasError) {
   const base =

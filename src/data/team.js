@@ -1,3 +1,10 @@
+// Photo: point `photo` at a real image under public/images/team/ to show it.
+// Any path containing "placeholder" (or a falsy value) falls back to
+// auto-generated initials in TeamCard.PhotoOrInitials. All members use initials
+// today; drop in a real photo path per member to replace them.
+// Links: an empty string ("") hides that icon. TeamCard renders only populated
+// links via isUsableLink(), so a card degrades cleanly while entries are pending
+// (e.g. Vincent has none yet). Fill in a real URL or email to surface the icon.
 export const team = [
   {
     id: 1,

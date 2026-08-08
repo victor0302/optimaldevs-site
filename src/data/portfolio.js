@@ -15,6 +15,7 @@ export const portfolio = [
     description:
       "A 15 page website for a local lawn care and gutter company, built so nearby customers can find them on Google and request a quote in a couple of clicks. Includes pages for each service, pages for each area they cover, and an online quote form that reaches the owner directly.",
     tags: ["Website", "Local Search", "Quote Form"],
+    image: "/images/portfolio/precision-lawn-gutters.png",
     status: "In preview",
   },
   {
@@ -24,6 +25,7 @@ export const portfolio = [
     description:
       "Our home on the web, designed and built in house. It runs on the same hosting setup, security practices, and automated publishing pipeline we put behind every client project, so the site you're reading is also our reference build.",
     tags: ["Website", "Hosting", "Contact Form"],
+    image: "/images/portfolio/optimaldevs-tech.png",
     status: "Live",
     liveUrl: "https://optimaldevs.tech",
   },
@@ -34,7 +36,8 @@ export const portfolio = [
     description:
       "Software we built for our own team. It reads the full history of a software project and explains it in plain language, so a developer joining midway can get up to speed in days instead of weeks. It's how we keep client work from depending on any one person.",
     tags: ["Product", "AI", "Internal Tool"],
-    status: "In development",
+    image: "/images/portfolio/buildstory.png",
+    status: "Live",
   },
   {
     id: 4,

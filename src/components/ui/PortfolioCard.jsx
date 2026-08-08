@@ -22,9 +22,16 @@ export function PortfolioCard({ project }) {
         </div>
       )}
       <div className="p-6">
-        {project.clientType && (
-          <p className="eyebrow mb-2">{project.clientType}</p>
-        )}
+        <div className="flex items-start justify-between gap-3 mb-2">
+          {project.clientType && (
+            <p className="eyebrow min-w-0">{project.clientType}</p>
+          )}
+          {project.status && (
+            <span className="shrink-0 text-xs font-medium text-muted border border-border rounded-full px-2.5 py-0.5 leading-5">
+              {project.status}
+            </span>
+          )}
+        </div>
         <h3 className="font-sans font-semibold text-[1.125rem] text-ink leading-tight">
           {project.name}
         </h3>

@@ -13,7 +13,10 @@ export default {
         "accent-light": "var(--color-accent-light)",
       },
       fontFamily: {
-        display: ['"Newsreader"', "ui-serif", "Georgia", "serif"],
+        // BRAND.md §4: mono is the identity. `display` drives headings and
+        // anything structural; `sans` keeps long-form copy readable.
+        display: ['"JetBrains Mono"', '"IBM Plex Mono"', "ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
+        mono: ['"JetBrains Mono"', '"IBM Plex Mono"', "ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
         sans: ['"Inter"', "ui-sans-serif", "system-ui", "sans-serif"],
       },
       letterSpacing: {

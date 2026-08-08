@@ -1,15 +1,25 @@
+/* Self-hosted per BRAND.md §4 hard rule 5: the identity collapses if the mono
+   face falls back. Weights 400 and 500 only — mono gets muddy above 500. */
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* BRAND.md §3. Two colours plus a neutral. Do not add a fifth without a
+   deliberate decision. */
 :root {
-  --color-bg: #FAFAF8;
-  --color-surface: #F2F0EB;
-  --color-border: #E2DDD6;
-  --color-text-primary: #1C1917;
-  --color-text-muted: #6B6560;
-  --color-accent: #0D7377;
-  --color-accent-light: #E0F2F2;
+  --color-bg: #F4F1E8;          /* cream  */
+  --color-surface: #F4F1E8;     /* cream — cards separate by hairline, not fill */
+  --color-border: rgba(17, 17, 17, 0.14);
+  --color-text-primary: #111111; /* ink   */
+  --color-text-muted: #6B675C;
+  --color-accent: #FF5C1C;      /* orange — SHAPES ONLY on cream, never text */
+  --color-accent-light: rgba(255, 92, 28, 0.12);
 }
 
 @layer base {
@@ -28,13 +38,18 @@
     overflow-x: clip;
   }
 
+  /* Mono carries the structure (headings, nav, labels, data); Inter keeps the
+     body copy readable. BRAND.md §4 names this as a legitimate evolution of
+     the system rather than a violation of it. */
   h1, h2, h3 {
-    font-family: "Newsreader", ui-serif, Georgia, serif;
+    font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular,
+                 Menlo, Consolas, monospace;
+    font-weight: 500;
     color: var(--color-text-primary);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-text-primary);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -42,19 +57,19 @@
 
 @layer utilities {
   .label {
-    font-family: "Inter", sans-serif;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
     font-weight: 500;
     font-size: 0.875rem;
     letter-spacing: 0.05em;
   }
 
   .eyebrow {
-    font-family: "Inter", sans-serif;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
     font-weight: 500;
     font-size: 0.8rem;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-accent);
+    text-transform: lowercase;
+    color: var(--color-text-muted);
   }
 
   .scrollbar-hide {
@@ -64,4 +79,20 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* ── Interim contrast guard ───────────────────────────────────────────────
+   Orange on cream measures 2.73:1 and fails WCAG AA for text (BRAND.md §3,
+   hard rule 1). The components still use `text-accent` in ~15 places for
+   links, icons and active nav states, inherited from the teal system where
+   that was legal.
+
+   Until the component pass replaces those with ink text plus orange bars,
+   underlines and fills, this forces accent-coloured text to ink. Orange keeps
+   showing up as fills and borders, which is where the brand wants it anyway.
+
+   DELETE THIS BLOCK once the component pass lands. It is a bridge, not a
+   pattern. Placed after @tailwind utilities so it wins on equal specificity. */
+.text-accent {
+  color: var(--color-text-primary);
 }

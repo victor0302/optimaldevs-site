@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="OptimalDevs">
+  <title>OptimalDevs</title>
+  <rect x="0" y="0" width="300" height="300" fill="#111111"/>
+  <rect x="10" y="10" width="280" height="280" rx="6" fill="#F4F1E8"/>
+  <path d="M91 76 L176 150 L91 224" fill="none" stroke="#111111" stroke-width="25" stroke-linejoin="miter"/>
+  <path d="M155 104 L200 150 L155 196" fill="none" stroke="#FF5C1C" stroke-width="25" stroke-linejoin="miter"/>
+</svg>

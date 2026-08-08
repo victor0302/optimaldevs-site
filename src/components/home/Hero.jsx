@@ -3,12 +3,10 @@ import { Button } from "../ui/Button.jsx"
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none flex items-center justify-center"
-      >
-        <span className="font-display italic font-light text-accent opacity-[0.08] select-none whitespace-nowrap leading-none text-[18rem] md:text-[28rem] after:content-['Optimal']" />
-      </div>
+      {/* The oversized italic "Optimal" watermark belonged to the serif
+          identity and reads as broken in monospace. BRAND.md §7 puts the
+          signature on the block cursor instead — that lands in the component
+          pass, along with the `> optimal_devs` lockup. */}
 
       <div className="relative max-w-5xl mx-auto px-6 text-center">
         <h1 className="font-display font-normal text-[3rem] md:text-[5rem] leading-[1.05] tracking-tight text-ink">

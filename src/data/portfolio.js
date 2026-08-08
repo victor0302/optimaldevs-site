@@ -11,7 +11,7 @@ export const portfolio = [
   {
     id: 1,
     name: "Precision Lawn & Gutters",
-    clientType: "Home Services · Denver, CO",
+    clientType: "Home Services · Denver",
     description:
       "A 15 page website for a local lawn care and gutter company, built so nearby customers can find them on Google and request a quote in a couple of clicks. Includes pages for each service, pages for each area they cover, and an online quote form that reaches the owner directly.",
     tags: ["Website", "Local Search", "Quote Form"],

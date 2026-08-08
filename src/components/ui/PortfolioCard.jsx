@@ -24,7 +24,7 @@ export function PortfolioCard({ project }) {
       <div className="p-6">
         <div className="flex items-start justify-between gap-3 mb-2">
           {project.clientType && (
-            <p className="eyebrow">{project.clientType}</p>
+            <p className="eyebrow min-w-0">{project.clientType}</p>
           )}
           {project.status && (
             <span className="shrink-0 text-xs font-medium text-muted border border-border rounded-full px-2.5 py-0.5 leading-5">

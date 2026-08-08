@@ -35,14 +35,14 @@ export default function Portfolio() {
     <>
       <PageMeta
         title="Portfolio"
-        description="Projects we've built for real businesses, with real results."
+        description="What we're building, and who we're building it for."
       />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
             eyebrow="Portfolio"
             title="Our Work"
-            subtitle="Projects we've built for real businesses, with real results."
+            subtitle="What we're building, and who we're building it for."
           />
         </div>
       </section>
@@ -50,7 +50,7 @@ export default function Portfolio() {
       <section className="pb-24">
         <div className="max-w-6xl mx-auto px-6">
           {hasProjects ? (
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2">
               {portfolio.map((project, i) => (
                 <FadeIn key={project.id} delay={i * 0.05}>
                   <PortfolioCard project={project} />

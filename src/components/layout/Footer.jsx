@@ -103,8 +103,11 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-6 py-5 text-xs text-muted">
-          © {year} OptimalDevs. All rights reserved.
+        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted">
+          <span>© {year} OptimalDevs. All rights reserved.</span>
+          <Link to="/privacy" className="font-mono hover:text-ink transition-colors">
+            Privacy
+          </Link>
         </div>
       </div>
     </footer>

@@ -22,6 +22,36 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="OptimalDevs — websites, software, security" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Organization schema. Deliberately narrow: no telephone, no postal
+         address, no aggregateRating, because none of those exist yet and
+         inventing them is how a site earns a manual action. Add sameAs
+         entries as the company's profiles go live. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "OptimalDevs",
+        "url": "https://optimaldevs.tech/",
+        "logo": "https://optimaldevs.tech/og.png",
+        "description": "Websites and bespoke software for small businesses. Design, development, and the infrastructure to back it up.",
+        "slogan": "websites \u00b7 software \u00b7 security",
+        "foundingDate": "2025-10",
+        "areaServed": {
+          "@type": "City",
+          "name": "Denver",
+          "containedInPlace": { "@type": "State", "name": "Colorado" }
+        },
+        "knowsAbout": [
+          "Web development",
+          "Local SEO",
+          "Cloud hosting",
+          "DevOps",
+          "Web application security"
+        ],
+        "sameAs": ["https://github.com/OptimalDevTeam"]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

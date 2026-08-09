@@ -7,6 +7,7 @@ import Team from "./pages/Team.jsx"
 import Portfolio from "./pages/Portfolio.jsx"
 import Partnership from "./pages/Partnership.jsx"
 import Contact from "./pages/Contact.jsx"
+import Privacy from "./pages/Privacy.jsx"
 import NotFound from "./pages/NotFound.jsx"
 
 function ScrollToTop() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/partnership" element={<Partnership />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

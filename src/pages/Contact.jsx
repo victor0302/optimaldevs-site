@@ -15,12 +15,17 @@ const SUBJECTS = [
   "Other",
 ]
 
+// hello@optimaldevs.tech has no mailbox behind it: optimaldevs.tech publishes
+// no MX records, so anything sent there bounces. The address is kept here for
+// the day the inbox exists (Zoho setup, issue #16) but is deliberately NOT
+// shown on the page, and the form is presented as the way to reach us.
+// Restore the mailto block below once MX records resolve.
 const GENERAL_EMAIL = "hello@optimaldevs.tech"
 
 function fieldClass(hasError) {
   const base =
     "w-full bg-bg border rounded-button px-4 py-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-accent/40 transition-colors"
-  return `${base} ${hasError ? "border-red-500" : "border-border focus:border-accent"}`
+  return `${base} ${hasError ? "border-red-500" : "border-field focus:border-ink"}`
 }
 
 export default function Contact() {
@@ -51,8 +56,8 @@ export default function Contact() {
       setSubmitState({
         status: "error",
         message:
-          "Form isn't configured yet. Please email us directly at " +
-          GENERAL_EMAIL + ".",
+          "This form isn't configured yet. Please reach out through the " +
+          "OptimalDevs GitHub profile in the footer and we'll get back to you.",
       })
       return
     }
@@ -137,7 +142,7 @@ export default function Contact() {
               >
                 <div className="space-y-5">
                   <div>
-                    <label htmlFor="name" className="block label text-ink/80 mb-1.5">
+                    <label htmlFor="name" className="block label text-ink mb-1.5">
                       Name
                     </label>
                     <input
@@ -155,7 +160,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block label text-ink/80 mb-1.5">
+                    <label htmlFor="email" className="block label text-ink mb-1.5">
                       Email
                     </label>
                     <input
@@ -179,7 +184,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block label text-ink/80 mb-1.5">
+                    <label htmlFor="subject" className="block label text-ink mb-1.5">
                       Subject
                     </label>
                     <select
@@ -196,7 +201,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block label text-ink/80 mb-1.5">
+                    <label htmlFor="message" className="block label text-ink mb-1.5">
                       Message
                     </label>
                     <textarea
@@ -237,13 +242,10 @@ export default function Contact() {
           </AnimatePresence>
 
           <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm">
-            <a
-              href={`mailto:${GENERAL_EMAIL}`}
-              className="inline-flex items-center gap-2 text-ink/80 hover:text-accent transition-colors"
-            >
+            <p className="inline-flex items-center gap-2 text-ink">
               <Mail size={16} />
-              {GENERAL_EMAIL}
-            </a>
+              The form above reaches us directly.
+            </p>
             <p className="text-muted">
               We typically respond within 1–2 business days.
             </p>

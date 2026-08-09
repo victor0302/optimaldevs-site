@@ -20,6 +20,12 @@
   --color-text-muted: #6B675C;
   --color-accent: #FF5C1C;      /* orange — SHAPES ONLY on cream, never text */
   --color-accent-light: rgba(255, 92, 28, 0.12);
+  /* Form controls need a harder edge than layout hairlines: an input has to
+     read as something you can type into, not as a section divider. The layout
+     hairline above measures 1.34:1 against cream, well under the 3:1 that
+     WCAG 2.1 SC 1.4.11 requires for UI component boundaries. This lands at
+     3.46:1. */
+  --color-field-border: rgba(17, 17, 17, 0.5);
 }
 
 @layer base {

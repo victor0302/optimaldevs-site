@@ -11,6 +11,7 @@ export default {
         muted: "var(--color-text-muted)",
         accent: "var(--color-accent)",
         "accent-light": "var(--color-accent-light)",
+        field: "var(--color-field-border)",
       },
       fontFamily: {
         // BRAND.md §4: mono is the identity. `display` drives headings and

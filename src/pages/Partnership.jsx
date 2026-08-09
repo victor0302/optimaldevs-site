@@ -75,7 +75,7 @@ export default function Partnership() {
               return (
                 <FadeIn key={step.title} delay={i * 0.06}>
                   <article className="h-full bg-surface border border-border rounded-lg p-7">
-                    <div className="w-11 h-11 rounded-md bg-accent-light text-accent flex items-center justify-center">
+                    <div className="w-11 h-11 rounded-md bg-ink text-bg flex items-center justify-center">
                       <Icon size={22} />
                     </div>
                     <h3 className="mt-5 font-sans font-semibold text-[1.125rem] text-ink leading-tight">
@@ -106,7 +106,7 @@ export default function Partnership() {
                     key={item}
                     className="flex items-start gap-3 text-[0.95rem] text-ink/85"
                   >
-                    <Check size={18} className="text-accent shrink-0 mt-0.5" />
+                    <Check size={18} className="text-ink shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -124,7 +124,7 @@ export default function Partnership() {
                 {responsibilities.map((item) => (
                   <li
                     key={item}
-                    className="text-[0.95rem] text-ink/85 leading-relaxed before:content-['•'] before:text-accent before:mr-3 before:font-bold"
+                    className="text-[0.95rem] text-ink/85 leading-relaxed before:content-['•'] before:text-ink before:mr-3 before:font-bold"
                   >
                     {item}
                   </li>
@@ -159,7 +159,7 @@ export default function Partnership() {
             <p className="eyebrow mb-3">Availability</p>
             <p className="font-display font-medium text-[1.75rem] md:text-[2rem] leading-tight text-ink">
               We currently have{" "}
-              <span className="text-accent">
+              <span className="border-b-4 border-accent">
                 {OPEN_SLOTS} partnership slot{OPEN_SLOTS === 1 ? "" : "s"} open
               </span>
               .

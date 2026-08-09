@@ -111,7 +111,7 @@ export default function Contact() {
                 transition={{ duration: reduced ? 0 : 0.3 }}
                 className="bg-surface border border-accent/30 rounded-lg p-8 text-center"
               >
-                <div className="w-12 h-12 mx-auto rounded-full bg-accent-light text-accent flex items-center justify-center">
+                <div className="w-12 h-12 mx-auto rounded-md bg-ink text-bg flex items-center justify-center">
                   <CheckCircle2 size={24} />
                 </div>
                 <h3 className="mt-5 font-display font-medium text-[1.5rem] text-ink leading-tight">

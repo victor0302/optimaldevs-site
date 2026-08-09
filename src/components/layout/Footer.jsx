@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { Github, Linkedin, Mail, Globe } from "lucide-react"
 import { team } from "../../data/team.js"
+import { Wordmark } from "../ui/Wordmark.jsx"
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -18,7 +19,7 @@ export function Footer() {
     <footer className="border-t border-border bg-surface mt-24">
       <div className="max-w-6xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-3">
         <div>
-          <p className="font-sans font-bold text-accent text-lg">OptimalDevs</p>
+          <p className="text-lg"><Wordmark /></p>
           <p className="mt-3 text-sm text-muted leading-relaxed max-w-xs">
             Built by developers, for small businesses.
           </p>
@@ -31,7 +32,7 @@ export function Footer() {
               <li key={link.to}>
                 <Link
                   to={link.to}
-                  className="text-sm text-ink/80 hover:text-accent transition-colors"
+                  className="font-mono text-sm text-ink/75 hover:text-ink transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -58,7 +59,7 @@ export function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${member.name} website`}
-                      className="hover:text-accent transition-colors"
+                      className="hover:text-ink transition-colors"
                     >
                       <Globe size={16} />
                     </a>
@@ -69,7 +70,7 @@ export function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${member.name} GitHub`}
-                      className="hover:text-accent transition-colors"
+                      className="hover:text-ink transition-colors"
                     >
                       <Github size={16} />
                     </a>
@@ -80,7 +81,7 @@ export function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${member.name} LinkedIn`}
-                      className="hover:text-accent transition-colors"
+                      className="hover:text-ink transition-colors"
                     >
                       <Linkedin size={16} />
                     </a>
@@ -89,7 +90,7 @@ export function Footer() {
                     <a
                       href={`mailto:${member.links.email}`}
                       aria-label={`${member.name} email`}
-                      className="hover:text-accent transition-colors"
+                      className="hover:text-ink transition-colors"
                     >
                       <Mail size={16} />
                     </a>

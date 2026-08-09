@@ -6,6 +6,18 @@ on:
   push:
     branches: [main]
 
+# Two merges seconds apart ran two deploys at once on 2026-08-08 and took the
+# site down: each job runs `aws s3 sync dist/assets/ --delete`, so one run
+# deleted the hashed bundles the other run's index.html pointed at. CloudFront
+# then served index.html for every .js and .css request and the page rendered
+# blank, while both workflow runs reported success.
+#
+# Queue instead of cancelling. Cancelling a deploy mid-sync produces the same
+# mismatch it is meant to prevent.
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
 env:
   AWS_REGION: us-east-1
   AWS_S3_BUCKET: optimaldevs-site

@@ -89,6 +89,13 @@ font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular,
 
 Weights: 400 and 500 only. Do not use 600 or 700 — mono faces get muddy heavy.
 
+**Amended 2026-08-09.** Open question 3 below is settled: mono carries
+headings, navigation, labels, eyebrows and buttons; Inter carries body copy.
+Both are self-hosted via `@fontsource`, which also removed the render-blocking
+Google Fonts request. The "lowercase in brand elements" rule in section 2 is
+relaxed for the wordmark specifically (see section 6) and for section eyebrows,
+which are uppercase because they are labels rather than brand marks.
+
 Suggested scale (adjust to the layout, keep the ratios):
 
 | Role | Size | Weight | Colour |
@@ -147,6 +154,23 @@ mark's width) on all sides. Nothing crosses it.
 
 ## 6. The wordmark lockup
 
+**Amended 2026-08-09. The wordmark is now `OptimalDevs`, set in the mono face,
+with no prompt, no underscore and no cursor.** The original specification is
+kept below because the reasoning still holds for the rest of the system, but
+the site does not follow it and should not be "corrected" back.
+
+Why it changed, in order:
+
+1. The orange block read as a stray square rather than a terminal caret,
+   especially in the navbar where it sat at the end of a word.
+2. The lowercase spaced form, `optimal devs`, read as set text rather than as
+   a company name.
+3. Open question 1 below asked which of three spellings to standardise on.
+   This settles it: `OptimalDevs`, matching the site title, and the LinkedIn
+   page name should be changed to match.
+
+The original specification follows.
+
 `> optimal_devs` in monospace, followed by a solid orange block cursor.
 
 Ratios relative to font size (`fs`), so it scales cleanly:
@@ -168,6 +192,13 @@ actual defect on the first banner, a 42px offset between the two line centres.
 ---
 
 ## 7. Layout principles
+
+> **Amended 2026-08-09.** Two of the rules below no longer describe the site.
+> The `>` prompt was applied to every section eyebrow and read as noise at the
+> top of every page, so eyebrows are plain and uppercase again. The block
+> cursor was removed everywhere, including the hero, for the reason given in
+> section 6. What survives is the rest of this section: left-aligned text,
+> generous vertical rhythm, and the accessibility floor.
 
 - **The `>` is the system's structural device.** Use it for section eyebrows,
   list markers, and CTA labels (`> get in touch`). Use it because it encodes
@@ -222,6 +253,13 @@ as final. The SVGs carry the correct font stack.
 ---
 
 ## 10. Open questions — settle these before building
+
+**Resolved 2026-08-09:** 1 (name form: `OptimalDevs`), 3 (body typeface: mono
+for structure, Inter for body), 4 (licensing: JetBrains Mono is OFL and
+`@fontsource` ships the licence, so self-hosting is fine), 5 (stack: React 18 +
+Vite + Tailwind, deployed to S3 and CloudFront). Question 2, whether security
+is a service line or a practice, is still open, and the Services page currently
+answers it as "service line".
 
 1. **Name form.** Three variants are currently live: `OptimalDevs` (site title),
    `Optimal Devs` (LinkedIn page name), `optimal_devs` (wordmark). Pick one

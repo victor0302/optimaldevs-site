@@ -74,7 +74,10 @@
     font-weight: 500;
     font-size: 0.8rem;
     letter-spacing: 0.1em;
-    text-transform: lowercase;
+    /* Uppercase, as it was before the restyle. BRAND.md asks for lowercase in
+       brand elements, but these are section labels rather than brand marks,
+       and uppercase reads as the more conventional agency signal. */
+    text-transform: uppercase;
     color: var(--color-text-muted);
   }
 

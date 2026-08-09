@@ -7,6 +7,8 @@
 //   "In preview"      — built and running, not yet on the client's domain
 //   "In development"  — active build, nothing public to link to
 // Omit liveUrl unless the link actually goes somewhere a visitor can use.
+// linkLabel overrides the default "Visit site" wording, so a preview link can
+// say so rather than implying the client has launched.
 export const portfolio = [
   {
     id: 1,
@@ -17,6 +19,8 @@ export const portfolio = [
     tags: ["Website", "Local Search", "Quote Form"],
     image: "/images/portfolio/precision-lawn-gutters.png",
     status: "In preview",
+    liveUrl: "https://precision.optimaldevs.tech",
+    linkLabel: "View preview",
   },
   {
     id: 2,
@@ -38,6 +42,7 @@ export const portfolio = [
     tags: ["Product", "AI", "Internal Tool"],
     image: "/images/portfolio/buildstory.png",
     status: "Live",
+    liveUrl: "https://buildstory-web.fly.dev",
   },
   {
     id: 4,

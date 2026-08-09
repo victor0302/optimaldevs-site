@@ -59,7 +59,7 @@ export function PortfolioCard({ project }) {
             rel="noopener noreferrer"
             className="mt-5 inline-flex items-center gap-1.5 font-mono text-sm font-medium text-ink underline decoration-accent decoration-2 underline-offset-4 hover:decoration-ink"
           >
-            Visit site <ExternalLink size={14} />
+            {project.linkLabel ?? "Visit site"} <ExternalLink size={14} />
           </a>
         )}
       </div>

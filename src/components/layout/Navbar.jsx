@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom"
 import { Menu, X } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Button } from "../ui/Button.jsx"
+import { Wordmark } from "../ui/Wordmark.jsx"
 import { useReducedMotion } from "../../hooks/useReducedMotion.js"
 
 const links = [
@@ -51,9 +52,10 @@ export function Navbar() {
         <Link
           to="/"
           onClick={() => handleSamePathClick("/")}
-          className="font-display font-medium text-ink text-[1.5rem] tracking-tight leading-none"
+          className="text-[1.35rem] tracking-tight leading-none"
+          aria-label="OptimalDevs home"
         >
-          OptimalDevs
+          <Wordmark />
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
@@ -64,8 +66,8 @@ export function Navbar() {
               end={link.to === "/"}
               onClick={() => handleSamePathClick(link.to)}
               className={({ isActive }) =>
-                `relative text-sm text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-px after:bg-accent after:transition-all after:duration-200 ${
-                  isActive ? "text-accent after:w-full" : "after:w-0 hover:after:w-full"
+                `relative font-mono text-sm text-ink/75 hover:text-ink transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:bg-accent after:transition-all after:duration-200 ${
+                  isActive ? "text-ink after:w-full" : "after:w-0 hover:after:w-full"
                 }`
               }
             >
@@ -109,7 +111,7 @@ export function Navbar() {
                   end={link.to === "/"}
                   onClick={() => handleSamePathClick(link.to)}
                   className={({ isActive }) =>
-                    `text-base ${isActive ? "text-accent" : "text-ink/80"}`
+                    `font-mono text-base ${isActive ? "text-ink border-l-2 border-accent pl-3" : "text-ink/75"}`
                   }
                 >
                   {link.label}

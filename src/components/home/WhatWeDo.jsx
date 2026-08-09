@@ -91,7 +91,7 @@ export function WhatWeDo() {
                   data-card
                   className="snap-start shrink-0 w-[280px] md:w-[320px] bg-surface border border-border rounded-lg p-7 hover:border-accent/40 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-md bg-accent-light text-accent flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-md bg-ink text-bg flex items-center justify-center">
                     {Icon && <Icon size={20} />}
                   </div>
                   <h3 className="mt-5 font-sans font-semibold text-[1.125rem] text-ink">
@@ -109,7 +109,7 @@ export function WhatWeDo() {
             type="button"
             aria-label="Previous services"
             onClick={() => scrollByCard(-1)}
-            className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-bg border border-border items-center justify-center text-ink shadow-sm transition-opacity ${
+            className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-md bg-bg border border-field items-center justify-center text-ink transition-opacity ${
               canScrollLeft
                 ? "opacity-100 hover:border-accent/40"
                 : "opacity-0 pointer-events-none"
@@ -121,7 +121,7 @@ export function WhatWeDo() {
             type="button"
             aria-label="Next services"
             onClick={() => scrollByCard(1)}
-            className={`hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-bg border border-border items-center justify-center text-ink shadow-sm transition-opacity ${
+            className={`hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-md bg-bg border border-field items-center justify-center text-ink transition-opacity ${
               canScrollRight
                 ? "opacity-100 hover:border-accent/40"
                 : "opacity-0 pointer-events-none"
@@ -134,7 +134,7 @@ export function WhatWeDo() {
         <div className="mt-10 text-center">
           <Link
             to="/services"
-            className="text-sm font-medium text-accent hover:underline underline-offset-4"
+            className="font-mono text-sm font-medium text-ink underline decoration-accent decoration-2 underline-offset-4 hover:decoration-ink"
           >
             See all services →
           </Link>

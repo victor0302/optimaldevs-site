@@ -9,7 +9,7 @@ export function PortfolioCard({ project }) {
     <motion.article
       whileHover={reduced ? undefined : { y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="h-full bg-surface border border-border rounded-lg overflow-hidden hover:border-accent/40 hover:shadow-[0_8px_24px_-12px_rgba(13,115,119,0.25)] transition-shadow"
+      className="h-full bg-surface border border-border rounded-lg overflow-hidden hover:border-accent transition-colors"
     >
       {project.image && (
         <div className="aspect-[16/10] bg-bg overflow-hidden">
@@ -27,7 +27,7 @@ export function PortfolioCard({ project }) {
             <p className="eyebrow min-w-0">{project.clientType}</p>
           )}
           {project.status && (
-            <span className="shrink-0 text-xs font-medium text-muted border border-border rounded-full px-2.5 py-0.5 leading-5">
+            <span className="shrink-0 font-mono text-xs text-muted border border-field rounded-[3px] px-2.5 py-0.5 leading-5">
               {project.status}
             </span>
           )}
@@ -45,7 +45,7 @@ export function PortfolioCard({ project }) {
             {project.tags.map((tag) => (
               <li
                 key={tag}
-                className="bg-accent-light text-accent text-xs font-medium px-2.5 py-1 rounded-full"
+                className="font-mono border border-field text-ink text-xs px-2.5 py-1 rounded-[3px]"
               >
                 {tag}
               </li>
@@ -57,7 +57,7 @@ export function PortfolioCard({ project }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline underline-offset-4"
+            className="mt-5 inline-flex items-center gap-1.5 font-mono text-sm font-medium text-ink underline decoration-accent decoration-2 underline-offset-4 hover:decoration-ink"
           >
             Visit site <ExternalLink size={14} />
           </a>

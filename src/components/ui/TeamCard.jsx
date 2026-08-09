@@ -23,7 +23,7 @@ function PhotoOrInitials({ name, photo }) {
         src={photo}
         alt={name}
         loading="lazy"
-        className="w-24 h-24 rounded-full object-cover ring-4 ring-accent-light"
+        className="w-24 h-24 rounded-md object-cover"
       />
     )
   }
@@ -31,7 +31,7 @@ function PhotoOrInitials({ name, photo }) {
   return (
     <div
       aria-hidden="true"
-      className="w-24 h-24 rounded-full bg-accent-light text-accent ring-4 ring-accent-light flex items-center justify-center font-sans font-semibold text-2xl"
+      className="w-24 h-24 rounded-md bg-ink text-bg flex items-center justify-center font-mono font-medium text-2xl"
     >
       {getInitials(name)}
     </div>
@@ -46,7 +46,7 @@ export function TeamCard({ member }) {
     <motion.article
       whileHover={reduced ? undefined : { y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="bg-surface border border-border rounded-lg p-6 hover:border-accent/40 hover:shadow-[0_8px_24px_-12px_rgba(13,115,119,0.25)] transition-shadow"
+      className="bg-surface border border-border rounded-lg p-6 hover:border-accent transition-colors"
     >
       <div className="flex items-start gap-5">
         <PhotoOrInitials name={member.name} photo={member.photo} />
@@ -54,11 +54,11 @@ export function TeamCard({ member }) {
           <h3 className="font-sans font-semibold text-[1.125rem] text-ink leading-tight">
             {member.name}
           </h3>
-          <p className="mt-0.5 font-sans font-medium text-[0.875rem] text-accent">
+          <p className="mt-0.5 font-mono font-medium text-[0.875rem] text-ink">
             {member.role}
           </p>
           {member.specialty && (
-            <span className="mt-2 inline-block bg-accent-light text-accent text-xs font-medium px-2.5 py-1 rounded-full">
+            <span className="mt-2 inline-block font-mono border border-field text-ink text-xs px-2.5 py-1 rounded-[3px]">
               {member.specialty}
             </span>
           )}
@@ -76,7 +76,7 @@ export function TeamCard({ member }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name} website`}
-            className="hover:text-accent transition-colors"
+            className="hover:text-ink transition-colors"
           >
             <Globe size={18} />
           </a>
@@ -87,7 +87,7 @@ export function TeamCard({ member }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name} GitHub`}
-            className="hover:text-accent transition-colors"
+            className="hover:text-ink transition-colors"
           >
             <Github size={18} />
           </a>
@@ -98,7 +98,7 @@ export function TeamCard({ member }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name} LinkedIn`}
-            className="hover:text-accent transition-colors"
+            className="hover:text-ink transition-colors"
           >
             <Linkedin size={18} />
           </a>
@@ -107,7 +107,7 @@ export function TeamCard({ member }) {
           <a
             href={`mailto:${links.email}`}
             aria-label={`${member.name} email`}
-            className="hover:text-accent transition-colors"
+            className="hover:text-ink transition-colors"
           >
             <Mail size={18} />
           </a>

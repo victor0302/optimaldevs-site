@@ -69,6 +69,9 @@
     letter-spacing: 0.05em;
   }
 
+  /* BRAND.md section 7: the `>` is the structural device. Section eyebrows are
+     prompts, so the marker belongs to the class rather than to every call
+     site. It is decorative, hence aria-hidden via ::before. */
   .eyebrow {
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-weight: 500;
@@ -78,6 +81,26 @@
     color: var(--color-text-muted);
   }
 
+  .eyebrow::before {
+    content: "> ";
+    color: var(--color-accent);
+  }
+
+  /* One cursor, on the hero only. BRAND.md section 7: spend the boldness here
+     and keep everything else quiet. */
+  .od-cursor-blink {
+    animation: od-blink 1.06s steps(1, end) infinite;
+  }
+
+  @keyframes od-blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .od-cursor-blink { animation: none; }
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -85,20 +108,4 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-}
-
-/* ── Interim contrast guard ───────────────────────────────────────────────
-   Orange on cream measures 2.73:1 and fails WCAG AA for text (BRAND.md §3,
-   hard rule 1). The components still use `text-accent` in ~15 places for
-   links, icons and active nav states, inherited from the teal system where
-   that was legal.
-
-   Until the component pass replaces those with ink text plus orange bars,
-   underlines and fills, this forces accent-coloured text to ink. Orange keeps
-   showing up as fills and borders, which is where the brand wants it anyway.
-
-   DELETE THIS BLOCK once the component pass lands. It is a bridge, not a
-   pattern. Placed after @tailwind utilities so it wins on equal specificity. */
-.text-accent {
-  color: var(--color-text-primary);
 }

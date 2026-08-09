@@ -58,7 +58,7 @@ export default function Partnership() {
           <SectionTitle
             eyebrow="Partnership"
             title="Get online for free. Really."
-            subtitle="We're a growing dev team looking to build real projects. You're a business that needs a website. Let's work together."
+            subtitle="We take on a small number of builds at no cost to the client. You get a site your customers can actually use, and you own it outright."
             align="center"
           />
         </div>
@@ -143,11 +143,12 @@ export default function Partnership() {
               An honest exchange.
             </h2>
             <p className="mt-5 text-muted text-base leading-relaxed">
-              We're building our portfolio and sharpening our skills on real
-              projects. Working with real businesses, with their real deadlines
-              and real requirements, is how we grow. You get a professional site at
-              near-zero cost. We get experience and a portfolio piece. It's a
-              fair trade.
+              Every agency needs work it can point to before it can charge for
+              it. We decided to build ours with real businesses, real deadlines,
+              and real stakes, rather than mock projects nobody ever visits. You
+              get a professional site and full ownership of it. We get work
+              worth showing. The businesses we start with now are the ones we
+              expect to still be supporting years from now.
             </p>
           </FadeIn>
         </div>

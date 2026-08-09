@@ -9,9 +9,9 @@ export const team = [
   {
     id: 1,
     name: "Victor Salazar",
-    role: "CEO & Project Manager",
+    role: "Founder & Technical Lead",
     specialty: "Full Stack Development",
-    bio: "Leads OptimalDevs, from finding clients to shipping their websites. Focused on making sure every project runs smoothly and every client feels taken care of.",
+    bio: "Runs OptimalDevs and leads technical delivery, from the first client conversation through to deployment. Owns the architecture, code review, and release process behind every project.",
     photo: "/images/team/placeholder.jpg",
     links: {
       website: "https://github.com/victor0302/portfolio",

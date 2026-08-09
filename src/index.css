@@ -69,9 +69,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* BRAND.md section 7: the `>` is the structural device. Section eyebrows are
-     prompts, so the marker belongs to the class rather than to every call
-     site. It is decorative, hence aria-hidden via ::before. */
   .eyebrow {
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-weight: 500;
@@ -81,25 +78,6 @@
     color: var(--color-text-muted);
   }
 
-  .eyebrow::before {
-    content: "> ";
-    color: var(--color-accent);
-  }
-
-  /* One cursor, on the hero only. BRAND.md section 7: spend the boldness here
-     and keep everything else quiet. */
-  .od-cursor-blink {
-    animation: od-blink 1.06s steps(1, end) infinite;
-  }
-
-  @keyframes od-blink {
-    0%, 50% { opacity: 1; }
-    50.01%, 100% { opacity: 0; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .od-cursor-blink { animation: none; }
-  }
 
   .scrollbar-hide {
     -ms-overflow-style: none;

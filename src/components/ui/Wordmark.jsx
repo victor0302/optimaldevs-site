@@ -1,31 +1,19 @@
 /**
- * The `> optimal_devs` lockup from BRAND.md section 6.
+ * The OptimalDevs wordmark.
  *
- * The cursor is a block, not a character, and its geometry is expressed in `em`
- * so the whole lockup scales from font-size alone:
+ * BRAND.md section 6 specifies `> optimal_devs` followed by a solid orange
+ * block cursor. Vic dropped the cursor and the underscore on 2026-08-09:
+ * the block read as a stray square rather than a terminal caret, and the
+ * spaced form is easier to read as a company name. The prompt stays, since
+ * it is what makes the mark a mark rather than set text.
  *
- *   width  0.55em  one character cell
- *   height 0.96em
- *   top    baseline - 0.71em, which puts 0.25em below the baseline
- *   gap    0.35em after the last glyph
- *
- * Always lowercase, always with the underscore. It is a lockup, never prose:
- * in a sentence the company is "OptimalDevs".
+ * Always lowercase. It is a lockup, never prose: in a sentence the company
+ * is "OptimalDevs".
  */
-export function Wordmark({ blink = false, className = "" }) {
+export function Wordmark({ className = "" }) {
   return (
     <span className={`font-mono font-medium text-ink whitespace-nowrap ${className}`}>
-      &gt; optimal_devs
-      <span
-        aria-hidden="true"
-        className={`inline-block bg-accent align-baseline ${blink ? "od-cursor-blink" : ""}`}
-        style={{
-          width: "0.55em",
-          height: "0.96em",
-          marginLeft: "0.35em",
-          verticalAlign: "-0.25em",
-        }}
-      />
+      &gt; optimal devs
     </span>
   )
 }

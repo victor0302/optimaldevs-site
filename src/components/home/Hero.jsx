@@ -3,21 +3,13 @@ import { Button } from "../ui/Button.jsx"
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-10 md:pt-28 md:pb-14">
-      {/* The oversized italic "Optimal" watermark belonged to the serif
-          identity and reads as broken in monospace. BRAND.md §7 puts the
-          signature on the block cursor instead — that lands in the component
-          pass, along with the `> optimal_devs` lockup. */}
-
+      {/* Deliberately bare. The serif-era watermark was removed with the
+          restyle, and the block cursor that briefly replaced it read as a
+          stray square rather than a caret. The headline carries the section
+          on its own. */}
       <div className="relative max-w-5xl mx-auto px-6 text-center">
         <h1 className="font-display font-normal text-[3rem] md:text-[5rem] leading-[1.05] tracking-tight text-ink">
           We build websites small businesses actually use.
-          {/* The one place this system spends boldness. Blink is suppressed
-              under prefers-reduced-motion by the .od-cursor-blink rule. */}
-          <span
-            aria-hidden="true"
-            className="od-cursor-blink inline-block bg-accent ml-[0.2em]"
-            style={{ width: "0.5em", height: "0.86em", verticalAlign: "-0.1em" }}
-          />
         </h1>
         <p className="mt-6 text-lg text-muted max-w-2xl mx-auto leading-relaxed">
           OptimalDevs is a lean dev team helping local businesses get online,

@@ -51,6 +51,7 @@ export const portfolio = [
     description:
       "A listing tool we're building for a Colorado real estate client. An agent enters a property address and gets back a polished listing presentation they can share with a seller as a simple web link, replacing an afternoon of manual work.",
     tags: ["Product", "Real Estate", "Client Work"],
+    image: "/images/portfolio/porchlight.png",
     status: "In development",
   },
 ]

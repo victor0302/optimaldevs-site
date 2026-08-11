@@ -46,7 +46,7 @@ export function TeamCard({ member }) {
     <motion.article
       whileHover={reduced ? undefined : { y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="bg-surface border border-border rounded-lg p-6 hover:border-accent transition-colors"
+      className="h-full flex flex-col bg-surface border border-border rounded-lg p-6 hover:border-accent transition-colors"
     >
       <div className="flex items-start gap-5">
         <PhotoOrInitials name={member.name} photo={member.photo} />
@@ -69,7 +69,10 @@ export function TeamCard({ member }) {
         {member.bio}
       </p>
 
-      <div className="mt-5 flex items-center gap-4 text-muted">
+      {/* mt-auto pins the links to the card floor, so the icon rows line up
+          across a row of cards whose bios are different lengths. min-h keeps
+          the floor identical for a member who has no links yet. */}
+      <div className="mt-auto pt-5 min-h-[2.625rem] flex items-center gap-4 text-muted">
         {isUsableLink(links.website) && (
           <a
             href={links.website}

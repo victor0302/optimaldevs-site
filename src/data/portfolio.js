@@ -6,6 +6,7 @@
 //   "Live"            — publicly available at liveUrl
 //   "In preview"      — built and running, not yet on the client's domain
 //   "In development"  — active build, nothing public to link to
+//   "In design"       — designed and specced, no code written yet
 // Omit liveUrl unless the link actually goes somewhere a visitor can use.
 // linkLabel overrides the default "Visit site" wording, so a preview link can
 // say so rather than implying the client has launched.
@@ -53,5 +54,15 @@ export const portfolio = [
     tags: ["Product", "Real Estate", "Client Work"],
     image: "/images/portfolio/porchlight.png",
     status: "In development",
+  },
+  {
+    id: 5,
+    name: "ShorterList",
+    clientType: "In-house product",
+    description:
+      "A job search tool we're building for our own team. It reads openings straight from the hiring systems companies publish to and estimates how many people are applying to each one, so someone early in their career can spend their week on the few roles they can realistically win instead of the ones a thousand people already found.",
+    tags: ["Product", "Job Search", "Data"],
+    image: "/images/portfolio/shorterlist.png",
+    status: "In design",
   },
 ]

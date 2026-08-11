@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- The SVG alone was not enough. Anything that ignores it falls back to
+         /favicon.ico, and the SPA rewrite answers that path with index.html at
+         HTTP 200, so those browsers got a document where an icon should be and
+         showed nothing. Shipping a real .ico gives them something to find. -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="OptimalDevs is a lean dev team helping small businesses get online with custom websites, online presence, and infrastructure." />
 

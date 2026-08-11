@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="OptimalDevs">
   <title>OptimalDevs</title>
   <rect x="0" y="0" width="300" height="300" fill="#111111"/>
-  <path d="M80 82 L146 150 L80 218" fill="none" stroke="#F4F1E8" stroke-width="28" stroke-linejoin="miter"/>
-  <path d="M162 82 L228 150 L162 218" fill="none" stroke="#FF5C1C" stroke-width="28" stroke-linejoin="miter"/>
+  <path d="M70 74 L142 150 L70 226" fill="none" stroke="#F4F1E8" stroke-width="40" stroke-linejoin="miter"/>
+  <path d="M166 74 L238 150 L166 226" fill="none" stroke="#FF5C1C" stroke-width="40" stroke-linejoin="miter"/>
 </svg>

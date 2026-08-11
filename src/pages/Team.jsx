@@ -25,7 +25,7 @@ export default function Team() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid gap-6 md:grid-cols-2">
             {team.map((member, i) => (
-              <FadeIn key={member.id} delay={i * 0.06}>
+              <FadeIn key={member.id} delay={i * 0.06} className="h-full">
                 <TeamCard member={member} />
               </FadeIn>
             ))}

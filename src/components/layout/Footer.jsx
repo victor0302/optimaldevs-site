@@ -12,6 +12,28 @@ const navLinks = [
   { to: "/contact", label: "Contact" },
 ]
 
+// A bare row of icons for four people reads as one anonymous clump — you can't
+// tell whose GitHub is whose. Pair each set with the name it belongs to.
+function memberIcons(member) {
+  const links = member.links || {}
+  const usable = (value) =>
+    typeof value === "string" && value.trim() && value.trim() !== "#"
+
+  return [
+    { key: "website", href: links.website, Icon: Globe, what: "website" },
+    { key: "github", href: links.github, Icon: Github, what: "GitHub" },
+    { key: "linkedin", href: links.linkedin, Icon: Linkedin, what: "LinkedIn" },
+    {
+      key: "email",
+      href: usable(links.email) ? `mailto:${links.email}` : "",
+      Icon: Mail,
+      what: "email",
+    },
+  ]
+    .filter((entry) => usable(entry.href))
+    .map((entry) => ({ ...entry, label: `${member.name} ${entry.what}` }))
+}
+
 export function Footer() {
   const year = new Date().getFullYear()
 
@@ -43,61 +65,32 @@ export function Footer() {
 
         <div>
           <p className="eyebrow mb-3">Team</p>
-          <ul className="flex flex-wrap gap-3">
-            {team.map((member) =>
-              member.links?.github ||
-              member.links?.linkedin ||
-              member.links?.email ||
-              member.links?.website ? (
-                <li
-                  key={member.id}
-                  className="flex items-center gap-2 text-muted"
-                >
-                  {member.links?.website && (
-                    <a
-                      href={member.links.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} website`}
-                      className="hover:text-ink transition-colors"
-                    >
-                      <Globe size={16} />
-                    </a>
-                  )}
-                  {member.links?.github && (
-                    <a
-                      href={member.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} GitHub`}
-                      className="hover:text-ink transition-colors"
-                    >
-                      <Github size={16} />
-                    </a>
-                  )}
-                  {member.links?.linkedin && (
-                    <a
-                      href={member.links.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} LinkedIn`}
-                      className="hover:text-ink transition-colors"
-                    >
-                      <Linkedin size={16} />
-                    </a>
-                  )}
-                  {member.links?.email && (
-                    <a
-                      href={`mailto:${member.links.email}`}
-                      aria-label={`${member.name} email`}
-                      className="hover:text-ink transition-colors"
-                    >
-                      <Mail size={16} />
-                    </a>
-                  )}
+          <ul className="space-y-2">
+            {team.map((member) => {
+              const icons = memberIcons(member)
+              if (icons.length === 0) return null
+              return (
+                <li key={member.id} className="flex items-center gap-3">
+                  <span className="font-mono text-sm text-ink/75">
+                    {member.name}
+                  </span>
+                  <span className="flex items-center gap-2 text-muted">
+                    {icons.map(({ key, href, Icon, label }) => (
+                      <a
+                        key={key}
+                        href={href}
+                        target={key === "email" ? undefined : "_blank"}
+                        rel={key === "email" ? undefined : "noopener noreferrer"}
+                        aria-label={label}
+                        className="hover:text-ink transition-colors"
+                      >
+                        <Icon size={16} />
+                      </a>
+                    ))}
+                  </span>
                 </li>
-              ) : null,
-            )}
+              )
+            })}
           </ul>
         </div>
       </div>

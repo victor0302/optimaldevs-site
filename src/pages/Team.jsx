@@ -14,6 +14,7 @@ export default function Team() {
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <SectionTitle
+            as="h1"
             eyebrow="Team"
             title="The people behind OptimalDevs"
             subtitle="We're a team of four developers, each with a specialty, all committed to doing good work."

@@ -10,10 +10,11 @@ export default {
         ink: "var(--color-text-primary)",
         muted: "var(--color-text-muted)",
         accent: "var(--color-accent)",
+        "accent-hover": "var(--color-accent-hover)",
         "accent-light": "var(--color-accent-light)",
       },
       fontFamily: {
-        display: ['"Newsreader"', "ui-serif", "Georgia", "serif"],
+        display: ['"Inter"', "ui-sans-serif", "system-ui", "sans-serif"],
         sans: ['"Inter"', "ui-sans-serif", "system-ui", "sans-serif"],
       },
       letterSpacing: {

@@ -5,11 +5,12 @@ import { PageMeta } from "../components/ui/PageMeta.jsx"
 export default function NotFound() {
   return (
     <>
-      <PageMeta title="Page not found" />
+      <PageMeta title="Page not found" noindex />
       <section className="py-24 md:py-32">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <p className="eyebrow mb-3">404</p>
           <SectionTitle
+            as="h1"
             title="That page doesn't exist."
             subtitle="The link might be broken, or the page may have moved. Head back home or get in touch."
             align="center"

@@ -1,67 +1,50 @@
 export const services = [
   {
-    id: 1,
+    id: "software",
+    icon: "AppWindow",
+    title: "Custom Software",
+    description:
+      "Internal tools, customer-facing applications, dashboards, and portals designed around the way your business actually operates.",
+    details: [
+      "Internal tools and operations portals",
+      "Customer-facing applications",
+      "Software shaped around your workflow",
+    ],
+  },
+  {
+    id: "data",
+    icon: "BarChart3",
+    title: "Data & Analytics",
+    description:
+      "Bring scattered operational data together and turn it into dashboards, reporting, and metrics that help you understand your business.",
+    details: [
+      "Data organization and preparation",
+      "Dashboards and business metrics",
+      "Clear, repeatable reporting",
+    ],
+  },
+  {
+    id: "automation",
+    icon: "Workflow",
+    title: "Integrations & Automation",
+    description:
+      "Connect the tools you already use with data pipelines, automated reporting, and workflows that reduce repetitive work.",
+    details: [
+      "Connections between systems and APIs",
+      "Automated reports and data updates",
+      "Workflow and process automation",
+    ],
+  },
+  {
+    id: "websites",
     icon: "Globe",
-    title: "Website Design & Development",
+    title: "Websites & Digital Experiences",
     description:
-      "Custom websites built to load fast, look great, and work on every device.",
+      "Fast, modern websites and web applications that connect with the systems behind your business and grow as your needs change.",
     details: [
-      "Custom design, no templates",
-      "Mobile responsive",
-      "Performance optimized",
-      "SEO foundations",
-    ],
-  },
-  {
-    id: 2,
-    icon: "Share2",
-    title: "Online Presence",
-    description:
-      "Getting your business found on Google, Facebook, and beyond.",
-    details: [
-      "Google Business Profile setup",
-      "Facebook page creation",
-      "Social media basics",
-      "Local SEO",
-    ],
-  },
-  {
-    id: 3,
-    icon: "Shield",
-    title: "Security",
-    description:
-      "Basic but solid security so your site and your customers are protected.",
-    details: [
-      "SSL setup",
-      "Security audits",
-      "Vulnerability checks",
-      "Best practice hardening",
-    ],
-  },
-  {
-    id: 4,
-    icon: "Settings",
-    title: "DevOps & Deployment",
-    description:
-      "We handle the infrastructure so your site stays up and deploys smoothly.",
-    details: [
-      "CI/CD pipelines",
-      "Hosting setup",
-      "Domain configuration",
-      "Monitoring basics",
-    ],
-  },
-  {
-    id: 5,
-    icon: "Server",
-    title: "Infrastructure",
-    description:
-      "Reliable, scalable hosting setups that grow with your business.",
-    details: [
-      "Cloud hosting setup",
-      "Database configuration",
-      "Backup systems",
-      "Performance tuning",
+      "Responsive websites and web applications",
+      "Accessibility, performance, and SEO foundations",
+      "Hosting, deployment, and implementation",
     ],
   },
 ]

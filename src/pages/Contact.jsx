@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
-import { useSearchParams } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import { AnimatePresence, motion } from "framer-motion"
 import { CheckCircle2, Mail } from "lucide-react"
 import { SectionTitle } from "../components/ui/SectionTitle.jsx"
@@ -9,9 +9,11 @@ import { PageMeta } from "../components/ui/PageMeta.jsx"
 import { useReducedMotion } from "../hooks/useReducedMotion.js"
 
 const SUBJECTS = [
-  "Partnership Inquiry",
-  "General Question",
-  "Project Quote",
+  "Software Development",
+  "Data & Analytics",
+  "Automation / Integration",
+  "Website Development",
+  "Platform / Pilot Interest",
   "Other",
 ]
 
@@ -20,19 +22,26 @@ const GENERAL_EMAIL = "hello@optimaldevs.tech"
 function fieldClass(hasError) {
   const base =
     "w-full bg-bg border rounded-button px-4 py-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-accent/40 transition-colors"
-  return `${base} ${hasError ? "border-red-500" : "border-border focus:border-accent"}`
+  return `${base} ${hasError ? "border-red-600" : "border-border focus:border-accent"}`
 }
 
 export default function Contact() {
   const [searchParams] = useSearchParams()
   const reduced = useReducedMotion()
   const querySubject = searchParams.get("subject")
-  const defaultSubject = SUBJECTS.includes(querySubject) ? querySubject : SUBJECTS[1]
+  const subjects =
+    querySubject === "Partnership Inquiry"
+      ? [...SUBJECTS, "Partnership Inquiry"]
+      : SUBJECTS
+  const defaultSubject = subjects.includes(querySubject)
+    ? querySubject
+    : "Other"
 
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: {
@@ -43,7 +52,14 @@ export default function Contact() {
     },
   })
 
-  const [submitState, setSubmitState] = useState({ status: "idle", message: "" })
+  useEffect(() => {
+    setValue("subject", defaultSubject)
+  }, [defaultSubject, setValue])
+
+  const [submitState, setSubmitState] = useState({
+    status: "idle",
+    message: "",
+  })
 
   const onSubmit = async (data) => {
     const endpoint = import.meta.env.VITE_CONTACT_API_ENDPOINT
@@ -52,7 +68,8 @@ export default function Contact() {
         status: "error",
         message:
           "Form isn't configured yet. Please email us directly at " +
-          GENERAL_EMAIL + ".",
+          GENERAL_EMAIL +
+          ".",
       })
       return
     }
@@ -63,7 +80,19 @@ export default function Contact() {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(data),
+        // Keep the existing backend subject vocabulary and four-field contract.
+        // The selected category is included in the delivered message.
+        body: JSON.stringify({
+          ...data,
+          subject:
+            data.subject === "Partnership Inquiry"
+              ? "Partnership Inquiry"
+              : data.subject === "Other" ||
+                  data.subject === "Platform / Pilot Interest"
+                ? "General Question"
+                : "Project Quote",
+          message: `Inquiry: ${data.subject}\n\n${data.message}`,
+        }),
       })
       if (!res.ok) throw new Error("Bad response")
       setSubmitState({ status: "success", message: "" })
@@ -73,7 +102,8 @@ export default function Contact() {
         status: "error",
         message:
           "Something went wrong sending your message. Please try again, or email " +
-          GENERAL_EMAIL + " directly.",
+          GENERAL_EMAIL +
+          " directly.",
       })
     }
   }
@@ -82,14 +112,15 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact"
-        description="Get in touch with the OptimalDevs team for partnership inquiries, project quotes, or general questions."
+        description="Talk to OptimalDevs about software, data and analytics, automation, websites, or interest in the platform currently in development."
       />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <SectionTitle
+            as="h1"
             eyebrow="Contact"
-            title="Let's talk."
-            subtitle="Whether you're interested in a partnership or just have questions, we're easy to reach."
+            title="Let's solve something useful."
+            subtitle="Tell us what you're working on, where things get stuck, or what you'd like to build. Software, data, automation, websites, or platform pilot interest: it starts with a conversation."
             align="center"
           />
         </div>
@@ -100,6 +131,8 @@ export default function Contact() {
           <AnimatePresence mode="wait">
             {submitState.status === "success" ? (
               <motion.div
+                role="status"
+                aria-live="polite"
                 key="success"
                 initial={reduced ? false : { opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -109,12 +142,12 @@ export default function Contact() {
                 <div className="w-12 h-12 mx-auto rounded-full bg-accent-light text-accent flex items-center justify-center">
                   <CheckCircle2 size={24} />
                 </div>
-                <h3 className="mt-5 font-display font-medium text-[1.5rem] text-ink leading-tight">
+                <h2 className="mt-5 font-display font-medium text-[1.5rem] text-ink leading-tight">
                   Message sent.
-                </h3>
+                </h2>
                 <p className="mt-3 text-muted">
-                  Thanks for reaching out. We'll get back to you within 1–2
-                  business days.
+                  Thanks for reaching out. We'll review your message and reply
+                  by email.
                 </p>
                 <div className="mt-6">
                   <Button
@@ -135,33 +168,57 @@ export default function Contact() {
                 transition={{ duration: reduced ? 0 : 0.3 }}
                 className="bg-surface border border-border rounded-lg p-6 md:p-8"
               >
-                <div className="space-y-5">
+                <form
+                  className="space-y-5"
+                  onSubmit={handleSubmit(onSubmit)}
+                  noValidate
+                  aria-busy={isSubmitting}
+                >
                   <div>
-                    <label htmlFor="name" className="block label text-ink/80 mb-1.5">
+                    <label
+                      htmlFor="name"
+                      className="block label text-ink/80 mb-1.5"
+                    >
                       Name
                     </label>
                     <input
                       id="name"
                       type="text"
                       autoComplete="name"
+                      aria-required="true"
+                      aria-invalid={!!errors.name}
+                      aria-describedby={errors.name ? "name-error" : undefined}
                       className={fieldClass(!!errors.name)}
-                      {...register("name", { required: "Your name is required." })}
+                      {...register("name", {
+                        required: "Your name is required.",
+                      })}
                     />
                     {errors.name && (
-                      <p className="mt-1.5 text-sm text-red-600">
+                      <p
+                        id="name-error"
+                        className="mt-1.5 text-sm text-red-700"
+                      >
                         {errors.name.message}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block label text-ink/80 mb-1.5">
+                    <label
+                      htmlFor="email"
+                      className="block label text-ink/80 mb-1.5"
+                    >
                       Email
                     </label>
                     <input
                       id="email"
                       type="email"
                       autoComplete="email"
+                      aria-required="true"
+                      aria-invalid={!!errors.email}
+                      aria-describedby={
+                        errors.email ? "email-error" : undefined
+                      }
                       className={fieldClass(!!errors.email)}
                       {...register("email", {
                         required: "An email so we can reply.",
@@ -172,22 +229,28 @@ export default function Contact() {
                       })}
                     />
                     {errors.email && (
-                      <p className="mt-1.5 text-sm text-red-600">
+                      <p
+                        id="email-error"
+                        className="mt-1.5 text-sm text-red-700"
+                      >
                         {errors.email.message}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block label text-ink/80 mb-1.5">
-                      Subject
+                    <label
+                      htmlFor="subject"
+                      className="block label text-ink/80 mb-1.5"
+                    >
+                      What can we help with?
                     </label>
                     <select
                       id="subject"
                       className={fieldClass(false)}
                       {...register("subject")}
                     >
-                      {SUBJECTS.map((s) => (
+                      {subjects.map((s) => (
                         <option key={s} value={s}>
                           {s}
                         </option>
@@ -196,42 +259,66 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block label text-ink/80 mb-1.5">
+                    <label
+                      htmlFor="message"
+                      className="block label text-ink/80 mb-1.5"
+                    >
                       Message
                     </label>
                     <textarea
                       id="message"
                       rows={6}
+                      aria-required="true"
+                      aria-invalid={!!errors.message}
+                      aria-describedby={
+                        errors.message ? "message-error" : undefined
+                      }
                       className={fieldClass(!!errors.message)}
                       {...register("message", {
-                        required: "Tell us a bit about what you're looking for.",
+                        required:
+                          "Tell us a bit about what you're looking for.",
                         minLength: {
                           value: 10,
-                          message: "A few more words please, at least 10 characters.",
+                          message:
+                            "A few more words please, at least 10 characters.",
                         },
                       })}
                     />
                     {errors.message && (
-                      <p className="mt-1.5 text-sm text-red-600">
+                      <p
+                        id="message-error"
+                        className="mt-1.5 text-sm text-red-700"
+                      >
                         {errors.message.message}
                       </p>
                     )}
                   </div>
 
                   {submitState.status === "error" && (
-                    <p className="text-sm text-red-600">{submitState.message}</p>
+                    <p role="alert" className="text-sm text-red-700">
+                      {submitState.message}
+                    </p>
                   )}
 
                   <div>
                     <Button
                       variant="primary"
-                      onClick={handleSubmit(onSubmit)}
+                      type="submit"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? "Sending…" : "Send Message"}
                     </Button>
                   </div>
-                </div>
+                  <p className="text-xs text-muted">
+                    We'll use your details to respond to your inquiry.{" "}
+                    <Link
+                      to="/privacy"
+                      className="text-accent underline underline-offset-4"
+                    >
+                      Privacy Policy
+                    </Link>
+                  </p>
+                </form>
               </motion.div>
             )}
           </AnimatePresence>
@@ -244,9 +331,7 @@ export default function Contact() {
               <Mail size={16} />
               {GENERAL_EMAIL}
             </a>
-            <p className="text-muted">
-              We typically respond within 1–2 business days.
-            </p>
+            <p className="text-muted">Prefer email? Reach us directly.</p>
           </div>
         </div>
       </section>

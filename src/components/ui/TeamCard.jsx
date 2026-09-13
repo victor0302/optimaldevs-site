@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, Globe } from "lucide-react"
+import { Github, Linkedin, Globe } from "lucide-react"
 import { useReducedMotion } from "../../hooks/useReducedMotion.js"
 
 function getInitials(name) {
@@ -23,7 +23,7 @@ function PhotoOrInitials({ name, photo }) {
         src={photo}
         alt={name}
         loading="lazy"
-        className="w-24 h-24 rounded-full object-cover ring-4 ring-accent-light"
+        className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-full object-cover ring-4 ring-accent-light"
       />
     )
   }
@@ -31,7 +31,7 @@ function PhotoOrInitials({ name, photo }) {
   return (
     <div
       aria-hidden="true"
-      className="w-24 h-24 rounded-full bg-accent-light text-accent ring-4 ring-accent-light flex items-center justify-center font-sans font-semibold text-2xl"
+      className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-full bg-accent-light text-accent ring-4 ring-accent-light flex items-center justify-center font-sans font-semibold text-2xl"
     >
       {getInitials(name)}
     </div>
@@ -46,7 +46,7 @@ export function TeamCard({ member }) {
     <motion.article
       whileHover={reduced ? undefined : { y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="bg-surface border border-border rounded-lg p-6 hover:border-accent/40 hover:shadow-[0_8px_24px_-12px_rgba(13,115,119,0.25)] transition-shadow"
+      className="bg-surface border border-border rounded-lg p-6 hover:border-accent/40 hover:shadow-md transition-shadow"
     >
       <div className="flex items-start gap-5">
         <PhotoOrInitials name={member.name} photo={member.photo} />
@@ -101,15 +101,6 @@ export function TeamCard({ member }) {
             className="hover:text-accent transition-colors"
           >
             <Linkedin size={18} />
-          </a>
-        )}
-        {isUsableLink(links.email) && (
-          <a
-            href={`mailto:${links.email}`}
-            aria-label={`${member.name} email`}
-            className="hover:text-accent transition-colors"
-          >
-            <Mail size={18} />
           </a>
         )}
       </div>

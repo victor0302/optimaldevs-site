@@ -8,20 +8,17 @@ const steps = [
   {
     icon: Handshake,
     title: "We reach out (or you do)",
-    body:
-      "We find businesses that could use a web presence and start a conversation. No pressure, no sales pitch.",
+    body: "We find businesses that could use a web presence and start a conversation. No pressure, no sales pitch.",
   },
   {
     icon: Hammer,
     title: "We build it together",
-    body:
-      "Our team designs and builds your site, sets up your Google and Facebook presence, and handles the technical side entirely.",
+    body: "Our team designs and builds your site, sets up your Google and Facebook presence, and handles the technical side entirely.",
   },
   {
     icon: Key,
     title: "You own it",
-    body:
-      "The site is yours. You pay only for the domain (~$12/year) and hosting (~$5–15/month). We handle everything else at no charge.",
+    body: "The site is yours. You pay only for the domain (~$12/year) and hosting (~$5–15/month). We handle everything else at no charge.",
   },
 ]
 
@@ -41,11 +38,6 @@ const responsibilities = [
   "Providing content: logo, photos, business info, copy (we can help guide this)",
 ]
 
-// Manually maintained: the number of partnership slots currently open. Update
-// this by hand as clients sign on (decrement) or slots free up (increment). It
-// drives the "N partnership slots open" line below.
-const OPEN_SLOTS = 2
-
 export default function Partnership() {
   return (
     <>
@@ -56,6 +48,7 @@ export default function Partnership() {
       <section className="pt-20 pb-16 md:pt-28 md:pb-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <SectionTitle
+            as="h1"
             eyebrow="Partnership"
             title="Get online for free. Really."
             subtitle="We're a growing dev team looking to build real projects. You're a business that needs a website. Let's work together."
@@ -145,8 +138,8 @@ export default function Partnership() {
             <p className="mt-5 text-muted text-base leading-relaxed">
               We're building our portfolio and sharpening our skills on real
               projects. Working with real businesses, with their real deadlines
-              and real requirements, is how we grow. You get a professional site at
-              near-zero cost. We get experience and a portfolio piece. It's a
+              and real requirements, is how we grow. You get a professional site
+              at near-zero cost. We get experience and a portfolio piece. It's a
               fair trade.
             </p>
           </FadeIn>
@@ -158,11 +151,7 @@ export default function Partnership() {
           <FadeIn>
             <p className="eyebrow mb-3">Availability</p>
             <p className="font-display font-medium text-[1.75rem] md:text-[2rem] leading-tight text-ink">
-              We currently have{" "}
-              <span className="text-accent">
-                {OPEN_SLOTS} partnership slot{OPEN_SLOTS === 1 ? "" : "s"} open
-              </span>
-              .
+              Talk to us about partnership availability.
             </p>
             <p className="mt-4 text-muted">
               Interested? Tell us a bit about your business and we'll be in

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 
 const baseClasses =
-  "inline-flex items-center justify-center font-medium text-[0.9rem] px-5 py-2 rounded-button transition-colors duration-200 focus-visible:outline-2 disabled:opacity-60 disabled:cursor-not-allowed"
+  "inline-flex min-h-11 items-center justify-center gap-2 font-medium text-[0.9rem] px-5 py-2.5 rounded-button transition-colors duration-200 focus-visible:outline-2 disabled:opacity-60 disabled:cursor-not-allowed"
 
 const variants = {
-  primary: "bg-accent text-white hover:bg-[#0a5e61] disabled:hover:bg-accent",
+  primary:
+    "bg-accent text-white hover:bg-accent-hover disabled:hover:bg-accent",
   ghost:
     "border border-accent text-accent hover:bg-accent-light disabled:hover:bg-transparent",
 }
@@ -23,7 +24,7 @@ export function Button({
 
   if (to) {
     return (
-      <Link to={to} className={classes} {...rest}>
+      <Link to={to} onClick={onClick} className={classes} {...rest}>
         {children}
       </Link>
     )
@@ -34,8 +35,11 @@ export function Button({
     return (
       <a
         href={href}
+        onClick={onClick}
         className={classes}
-        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...(isExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
         {...rest}
       >
         {children}

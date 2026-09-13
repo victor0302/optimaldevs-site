@@ -2,14 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin-wght-normal.woff2") format("woff2");
+}
+
 :root {
-  --color-bg: #FAFAF8;
-  --color-surface: #F2F0EB;
-  --color-border: #E2DDD6;
-  --color-text-primary: #1C1917;
-  --color-text-muted: #6B6560;
-  --color-accent: #0D7377;
-  --color-accent-light: #E0F2F2;
+  --color-bg: #fdfcf9;
+  --color-surface: #f5f1e9;
+  --color-border: #e2d9cc;
+  --color-text-primary: #2e241e;
+  --color-text-muted: #68594b;
+  --color-accent: #a8421d;
+  --color-accent-hover: #893516;
+  --color-accent-light: #f8dcc8;
 }
 
 @layer base {
@@ -25,18 +34,63 @@
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: clip;
   }
 
-  h1, h2, h3 {
-    font-family: "Newsreader", ui-serif, Georgia, serif;
+  h1,
+  h2,
+  h3 {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
     color: var(--color-text-primary);
+    letter-spacing: -0.035em;
   }
 
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: 4px;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  .section-space {
+    @apply py-20 lg:py-28;
+  }
+
+  .section-heading {
+    @apply text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold leading-[1.15];
+  }
+
+  .page-heading {
+    @apply text-[2.5rem] sm:text-5xl lg:text-6xl font-semibold leading-[1.08];
+  }
+
+  .text-link {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-accent underline-offset-4 hover:underline;
+  }
+
+  .flow-surface {
+    background-color: var(--color-surface);
+    background-image: radial-gradient(
+      var(--color-border) 0.65px,
+      transparent 0.65px
+    );
+    background-size: 16px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
 

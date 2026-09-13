@@ -17,7 +17,7 @@ export const team = [
       website: "https://github.com/victor0302/portfolio",
       github: "https://github.com/victor0302",
       linkedin: "",
-      email: "victorsalazar.01.vv@gmail.com",
+      email: "",
     },
   },
   {

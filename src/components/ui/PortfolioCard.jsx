@@ -9,7 +9,7 @@ export function PortfolioCard({ project }) {
     <motion.article
       whileHover={reduced ? undefined : { y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className="h-full bg-surface border border-border rounded-lg overflow-hidden hover:border-accent/40 hover:shadow-[0_8px_24px_-12px_rgba(13,115,119,0.25)] transition-shadow"
+      className="h-full bg-surface border border-border rounded-lg overflow-hidden hover:border-accent/40 hover:shadow-md transition-shadow"
     >
       {project.image && (
         <div className="aspect-[16/10] bg-bg overflow-hidden">

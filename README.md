@@ -36,4 +36,8 @@ The Inter font is served locally from `public/fonts/`, with its SIL Open Font Li
 
 The existing GitHub Actions workflow lints, builds, and deploys `dist/` to S3/CloudFront on pushes to `main`. It supplies the contact endpoint at build time. The existing Vercel configuration also includes a SPA rewrite.
 
-CloudFront must retain its existing SPA fallback to `index.html` for direct client routes such as `/platform`. The live distribution's routing configuration is not managed in this repository. Verify direct route loading on staging before deployment; no AWS resources or deployment configuration were changed here.
+Deployment authenticates with GitHub OIDC using the repository variable `AWS_DEPLOY_ROLE_ARN`, set to `arn:aws:iam::133089467993:role/optimaldevs-site-github-deploy`. Only the deploy job can request an OIDC token; AWS credentials must belong to account `133089467993`. No long-lived AWS keys are required in GitHub secrets.
+
+The role's trust policy must allow audience `sts.amazonaws.com` and subject `repo:victor0302/optimaldevs-site:ref:refs/heads/main` through the `token.actions.githubusercontent.com` provider. This matches the repository's current default, non-immutable subject format. Recheck trust if repository naming or OIDC settings change. The role needs bucket listing and object publishing/deletion permissions on `optimaldevs-site`, plus `cloudfront:CreateInvalidation` on distribution `E1IHT7N6P3U2Y9`. IAM configuration is managed outside this repository. See [GitHub's AWS OIDC guide](https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-aws).
+
+CloudFront must retain its existing SPA fallback to `index.html` for direct client routes such as `/platform`. The live distribution's routing configuration is not managed in this repository. Verify direct route loading after deployment.

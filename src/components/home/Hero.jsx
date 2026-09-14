@@ -4,8 +4,8 @@ import { SystemFlow } from "../ui/SystemFlow.jsx"
 
 export function Hero() {
   return (
-    <section className="pt-16 pb-16 lg:pt-24 lg:pb-20">
-      <div className="site-container grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-14">
+    <section className="pt-10 pb-16 sm:pt-12 lg:pb-20">
+      <div className="site-container grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-14">
         <div>
           <p className="eyebrow mb-6">Software, data & automation</p>
           <h1 className="text-[2.75rem] sm:text-6xl xl:text-[4.5rem] font-semibold leading-[1.06] tracking-[-0.055em]">

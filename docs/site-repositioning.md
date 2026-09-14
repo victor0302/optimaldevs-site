@@ -8,7 +8,7 @@ Added `/platform`, `/about`, and `/privacy`. Updated `/services` and `/contact`.
 
 New components: `SystemFlow`, `DevelopmentBadge`, `Problem`, `HowItWorks`, and `PlatformPreview`. Reused and updated the existing Hero, service cards, company teaser, contact CTA, layout, buttons, and metadata helper. Diagrams use HTML and lightweight SVG. No new application dependencies were added.
 
-Following the latest visual feedback, the site uses a warm white base (`#FDFCF9`), subtle beige panels (`#F5F1E9`), and accessible burnt orange (`#A8421D`). This lightens the earlier tan background while keeping the orange accents. Colors use the existing theme tokens, including hover states and focus outlines. Headings use the existing Inter family, now self-hosted with its license; the unused Newsreader request is removed. The text wordmark remains. The stock framework favicon is replaced with a simple orange OD favicon. Existing team names, roles, specialties, and biographies are retained; personal email exposure is removed.
+Following the latest visual feedback, the site keeps its warm white base (`#FDFCF9`) and subtle beige panels (`#F5F1E9`), with blue accents (`#2572A7`) and pale blue highlights (`#E8F3FB`) replacing the previous orange. Colors use the existing theme tokens, including hover states and focus outlines. Headings use the existing Inter family, now self-hosted with its license; the unused Newsreader request is removed. The text wordmark remains. The stock framework favicon is replaced with a simple blue OD favicon. Existing team names, roles, specialties, and biographies are retained; personal email exposure is removed.
 
 ## Business Brain platform expansion
 

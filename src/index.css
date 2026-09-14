@@ -16,9 +16,9 @@
   --color-border: #e2d9cc;
   --color-text-primary: #2e241e;
   --color-text-muted: #68594b;
-  --color-accent: #a8421d;
-  --color-accent-hover: #893516;
-  --color-accent-light: #f8dcc8;
+  --color-accent: #2572a7;
+  --color-accent-hover: #1e5d89;
+  --color-accent-light: #e8f3fb;
 }
 
 @layer base {

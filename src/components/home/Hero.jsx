@@ -4,7 +4,7 @@ import { SystemFlow } from "../ui/SystemFlow.jsx"
 
 export function Hero() {
   return (
-    <section className="pt-10 pb-16 sm:pt-12 lg:pb-20">
+    <section className="pt-4 pb-16 lg:pb-20">
       <div className="site-container grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-14">
         <div>
           <p className="eyebrow mb-6">Software, data & automation</p>

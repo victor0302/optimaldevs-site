@@ -9,7 +9,7 @@ export default function Team() {
     <>
       <PageMeta
         title="Team"
-        description="The four developers behind OptimalDevs, each with a specialty and all committed to good work."
+        description="Meet the team building OptimalDevs software, data systems, cloud infrastructure, and a platform in active development."
       />
       <section className="pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="max-w-6xl mx-auto px-6">
@@ -17,7 +17,7 @@ export default function Team() {
             as="h1"
             eyebrow="Team"
             title="The people behind OptimalDevs"
-            subtitle="We're a team of four developers, each with a specialty, all committed to doing good work."
+            subtitle="A small technical team working across software, data systems, security, and cloud infrastructure to build useful products and deliver practical client solutions."
           />
         </div>
       </section>

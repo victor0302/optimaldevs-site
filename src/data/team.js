@@ -9,9 +9,9 @@ export const team = [
   {
     id: 1,
     name: "Victor Salazar",
-    role: "CEO & Project Manager",
+    role: "Founder & Technical Lead",
     specialty: "Full Stack Development",
-    bio: "Leads OptimalDevs, from finding clients to shipping their websites. Focused on making sure every project runs smoothly and every client feels taken care of.",
+    bio: "Leads product direction, software architecture, data systems, client discovery, and development of the OptimalDevs platform.",
     photo: "/images/team/placeholder.jpg",
     links: {
       website: "https://github.com/victor0302/portfolio",
@@ -25,7 +25,7 @@ export const team = [
     name: "Diyor Rudov",
     role: "Security Lead",
     specialty: "Security & Full Stack",
-    bio: "Keeps OptimalDevs projects secure from the ground up with audits, hardening, and making sure no client site is left vulnerable.",
+    bio: "Focuses on application security, platform security, secure architecture, and security practices across OptimalDevs infrastructure and products.",
     photo: "/images/team/placeholder.jpg",
     links: {
       website: "https://0xdiyor.com",
@@ -39,7 +39,7 @@ export const team = [
     name: "Luis Padilla",
     role: "DevOps Lead",
     specialty: "DevOps & Full Stack",
-    bio: "Owns the pipeline. CI/CD, deployments, and making sure every site goes live without a hitch and stays that way.",
+    bio: "Builds deployment, CI/CD, observability, and cloud infrastructure supporting OptimalDevs applications and platform services.",
     photo: "/images/team/placeholder.jpg",
     links: {
       website: "",
@@ -53,7 +53,7 @@ export const team = [
     name: "Vincent Vitacco",
     role: "Infrastructure Lead",
     specialty: "Infrastructure & Full Stack",
-    bio: "Designs and manages the hosting and infrastructure that keeps OptimalDevs sites fast, reliable, and ready to scale.",
+    bio: "Works on cloud architecture, infrastructure, reliability, and scalable systems supporting OptimalDevs products and deployments.",
     photo: "/images/team/placeholder.jpg",
     links: {
       website: "",

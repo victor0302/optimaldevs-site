@@ -51,7 +51,7 @@ export default function About() {
             ],
             [
               "Build for what comes next",
-              "Alongside client work, we're developing a platform that connects business data and organizational knowledge to support search, analytics, and automation.",
+              "Alongside client work, we're developing our own OptimalDevs platform, designed to connect business data and organizational knowledge for search, analytics, and automation.",
             ],
           ].map(([title, body]) => (
             <article key={title}>

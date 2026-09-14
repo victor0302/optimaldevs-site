@@ -101,7 +101,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Content is visible by default; entering the viewport adds one brief reveal. */
+  /* Keep content opaque throughout its entrance so scrolling never makes it flash. */
   .reveal-once[data-revealed="true"] {
     animation: section-enter 400ms ease-out var(--reveal-delay, 0s) both;
   }
@@ -135,22 +135,18 @@
 
 @keyframes section-enter {
   from {
-    opacity: 0;
     transform: translateY(var(--reveal-distance, 8px));
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes flow-node-enter {
   from {
-    opacity: 0;
     transform: translateY(4px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }

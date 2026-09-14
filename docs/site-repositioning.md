@@ -12,7 +12,7 @@ Following the latest visual feedback, the site keeps its warm white base (`#FDFC
 
 ## Motion
 
-The homepage diagram reveals its inputs, connecting lines, OptimalDevs hub, and outputs once when it enters view; the sequence finishes in about 1.15 seconds. Homepage section content uses the existing `FadeIn` component with a 400ms, 8px entrance. Content is visible by default, and focusing a link inside a section cancels its entrance permanently for that mount. Service cards gain a small border/shadow response; button arrows move 2px on hover or keyboard focus.
+The homepage diagram animates its connecting lines and gently moves its inputs, OptimalDevs hub, and outputs once when it enters view; the sequence finishes in about 1.15 seconds. Homepage section content uses the existing `FadeIn` component with a 400ms, 8px entrance. Sections and diagram labels stay fully opaque throughout their entrances to avoid visible content disappearing and flashing back in during scrolling. Focusing a link inside a section cancels its entrance permanently for that mount. Service cards gain a small border/shadow response; button arrows move 2px on hover or keyboard focus.
 
 The existing Motion viewport hook and reduced-motion hook coordinate CSS animations. Reduced-motion preferences disable the entrances, diagram sequence, and arrow movement, including when the preference changes. No dependencies were added. The palette, content, and 16px homepage top spacing remain unchanged.
 

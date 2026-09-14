@@ -80,6 +80,90 @@
     );
     background-size: 16px 16px;
   }
+
+  .service-card {
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .service-card:focus-within {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgb(46 36 30 / 6%);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgb(46 36 30 / 6%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Content is visible by default; entering the viewport adds one brief reveal. */
+  .reveal-once[data-revealed="true"] {
+    animation: section-enter 400ms ease-out var(--reveal-delay, 0s) both;
+  }
+
+  .reveal-once:focus-within {
+    animation: none;
+  }
+
+  .flow-sequence[data-revealed="true"] .flow-node {
+    animation: flow-node-enter 280ms ease-out var(--flow-delay, 0s) both;
+  }
+
+  .flow-sequence[data-revealed="true"] .flow-line {
+    animation: flow-connect 280ms ease-out var(--flow-delay, 0s) both;
+  }
+
+  .button-motion > svg {
+    transition: transform 180ms ease-out;
+  }
+
+  .button-motion:focus-visible:not(:disabled) > svg {
+    transform: translate(2px, -2px);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .button-motion:hover:not(:disabled) > svg {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance, 8px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flow-node-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flow-connect {
+  from {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

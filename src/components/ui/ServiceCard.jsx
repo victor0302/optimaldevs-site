@@ -15,7 +15,7 @@ export function ServiceCard({ service, detailed = false, index = 0 }) {
   return (
     <article
       id={detailed ? service.id : undefined}
-      className="h-full flex flex-col border border-border rounded-lg bg-bg p-6 sm:p-8 scroll-mt-24"
+      className="service-card h-full flex flex-col border border-border rounded-lg bg-bg p-6 sm:p-8 scroll-mt-24"
     >
       <div className="flex items-center justify-between">
         <Icon

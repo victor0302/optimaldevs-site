@@ -1,7 +1,9 @@
+import { FadeIn } from "../ui/FadeIn.jsx"
+
 export function Problem() {
   return (
     <section className="section-space bg-surface border-y border-border">
-      <div className="site-container grid gap-6 md:grid-cols-2 md:gap-16">
+      <FadeIn className="site-container grid gap-6 md:grid-cols-2 md:gap-16">
         <div>
           <p className="eyebrow mb-4">The missing connection</p>
           <h2 className="section-heading max-w-lg">
@@ -22,7 +24,7 @@ export function Problem() {
             moving information and more time using it.
           </p>
         </div>
-      </div>
+      </FadeIn>
     </section>
   )
 }

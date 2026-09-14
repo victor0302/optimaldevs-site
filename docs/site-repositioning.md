@@ -10,6 +10,12 @@ New components: `SystemFlow`, `DevelopmentBadge`, `Problem`, `HowItWorks`, and `
 
 Following the latest visual feedback, the site keeps its warm white base (`#FDFCF9`) and subtle beige panels (`#F5F1E9`), with blue accents (`#2572A7`) and pale blue highlights (`#E8F3FB`) replacing the previous orange. Colors use the existing theme tokens, including hover states and focus outlines. Headings use the existing Inter family, now self-hosted with its license; the unused Newsreader request is removed. The text wordmark remains. The stock framework favicon is replaced with a simple blue OD favicon. Existing team names, roles, specialties, and biographies are retained; personal email exposure is removed.
 
+## Motion
+
+The homepage diagram reveals its inputs, connecting lines, OptimalDevs hub, and outputs once when it enters view; the sequence finishes in about 1.15 seconds. Homepage section content uses the existing `FadeIn` component with a 400ms, 8px entrance. Content is visible by default, and focusing a link inside a section cancels its entrance permanently for that mount. Service cards gain a small border/shadow response; button arrows move 2px on hover or keyboard focus.
+
+The existing Motion viewport hook and reduced-motion hook coordinate CSS animations. Reduced-motion preferences disable the entrances, diagram sequence, and arrow movement, including when the preference changes. No dependencies were added. The palette, content, and 16px homepage top spacing remain unchanged.
+
 ## Business Brain platform expansion
 
 The Platform page now presents three connected capabilities: Business Data, Business Knowledge, and Business Intelligence. The homepage platform preview and About page reflect the same direction, while client services remain centered on software, data, analytics, automation, and websites.

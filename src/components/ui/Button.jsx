@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 const baseClasses =
-  "inline-flex min-h-11 items-center justify-center gap-2 font-medium text-[0.9rem] px-5 py-2.5 rounded-button transition-colors duration-200 focus-visible:outline-2 disabled:opacity-60 disabled:cursor-not-allowed"
+  "button-motion inline-flex min-h-11 items-center justify-center gap-2 font-medium text-[0.9rem] px-5 py-2.5 rounded-button transition-colors duration-200 focus-visible:outline-2 disabled:opacity-60 disabled:cursor-not-allowed"
 
 const variants = {
   primary:

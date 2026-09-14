@@ -1,10 +1,11 @@
+import { FadeIn } from "../ui/FadeIn.jsx"
 import { Link } from "react-router-dom"
 import { ArrowUpRight } from "lucide-react"
 
 export function TeamTeaser() {
   return (
     <section className="section-space">
-      <div className="site-container grid gap-8 md:grid-cols-2 md:gap-20">
+      <FadeIn className="site-container grid gap-8 md:grid-cols-2 md:gap-20">
         <div>
           <p className="eyebrow mb-4">Small team. Practical thinking.</p>
           <h2 className="section-heading">
@@ -27,7 +28,7 @@ export function TeamTeaser() {
             <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </div>
-      </div>
+      </FadeIn>
     </section>
   )
 }

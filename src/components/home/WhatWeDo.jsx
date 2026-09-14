@@ -1,3 +1,4 @@
+import { FadeIn } from "../ui/FadeIn.jsx"
 import { Link } from "react-router-dom"
 import { ArrowUpRight } from "lucide-react"
 import { ServiceCard } from "../ui/ServiceCard.jsx"
@@ -6,7 +7,7 @@ import { services } from "../../data/services.js"
 export function WhatWeDo() {
   return (
     <section className="section-space">
-      <div className="site-container">
+      <FadeIn className="site-container">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div className="max-w-xl">
             <p className="eyebrow mb-4">What we do</p>
@@ -25,7 +26,7 @@ export function WhatWeDo() {
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
         </div>
-      </div>
+      </FadeIn>
     </section>
   )
 }

@@ -1,4 +1,7 @@
 import { Database, BarChart3, Workflow, Lightbulb } from "lucide-react"
+import { useRef } from "react"
+import { useInView } from "framer-motion"
+import { useReducedMotion } from "../../hooks/useReducedMotion.js"
 
 const outputs = [
   { label: "Analytics", icon: BarChart3 },
@@ -7,6 +10,9 @@ const outputs = [
 ]
 
 export function SystemFlow({ platform = false }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, amount: 0.2 })
+  const reduced = useReducedMotion()
   const inputs = platform
     ? [
         "POS",
@@ -20,7 +26,11 @@ export function SystemFlow({ platform = false }) {
     : ["POS", "Website", "Accounting", "Inventory", "Marketing"]
 
   return (
-    <figure className="flow-surface rounded-xl border border-border p-5 sm:p-8">
+    <figure
+      ref={ref}
+      data-revealed={inView && !reduced ? "true" : undefined}
+      className="flow-sequence flow-surface rounded-xl border border-border p-5 sm:p-8"
+    >
       <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-muted mb-7">
         {platform
           ? "Planned platform architecture"
@@ -28,10 +38,11 @@ export function SystemFlow({ platform = false }) {
       </p>
       <div aria-hidden="true">
         <div className="flex flex-wrap justify-center gap-2">
-          {inputs.map((input) => (
+          {inputs.map((input, index) => (
             <span
               key={input}
-              className="rounded border border-border bg-bg px-3 py-2 text-xs font-medium"
+              className="flow-node rounded border border-border bg-bg px-3 py-2 text-xs font-medium"
+              style={{ "--flow-delay": `${index * 0.04}s` }}
             >
               {input}
             </span>
@@ -44,11 +55,17 @@ export function SystemFlow({ platform = false }) {
           preserveAspectRatio="none"
         >
           <path
+            className="flow-line"
+            pathLength="1"
+            style={{ "--flow-delay": "0.18s" }}
             d="M40 0V15Q40 28 54 28H166Q180 28 180 42V64M180 0V64M320 0V15Q320 28 306 28H194Q180 28 180 42"
             stroke="currentColor"
           />
         </svg>
-        <div className="max-w-[260px] mx-auto rounded-lg bg-accent text-white px-5 py-5 text-center shadow-sm">
+        <div
+          className="flow-node max-w-[260px] mx-auto rounded-lg bg-accent text-white px-5 py-5 text-center shadow-sm"
+          style={{ "--flow-delay": "0.4s" }}
+        >
           <Database size={24} className="mx-auto mb-2" strokeWidth={1.5} />
           <p className="font-semibold text-xl tracking-tight">OptimalDevs</p>
           <p className="text-xs mt-1 text-white/90">
@@ -64,15 +81,19 @@ export function SystemFlow({ platform = false }) {
           preserveAspectRatio="none"
         >
           <path
+            className="flow-line"
+            pathLength="1"
+            style={{ "--flow-delay": "0.55s" }}
             d="M180 0V48M180 0V10Q180 24 166 24H66Q60 24 60 34V48M180 0V10Q180 24 194 24H294Q300 24 300 34V48"
             stroke="currentColor"
           />
         </svg>
         <div className="grid grid-cols-3 gap-2">
-          {outputs.map(({ label, icon: Icon }) => (
+          {outputs.map(({ label, icon: Icon }, index) => (
             <div
               key={label}
-              className="rounded border border-border bg-bg px-1.5 py-3 text-center"
+              className="flow-node rounded border border-border bg-bg px-1.5 py-3 text-center"
+              style={{ "--flow-delay": `${0.75 + index * 0.06}s` }}
             >
               <Icon
                 size={18}

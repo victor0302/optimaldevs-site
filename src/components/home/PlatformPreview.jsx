@@ -1,3 +1,4 @@
+import { FadeIn } from "../ui/FadeIn.jsx"
 import { ArrowUpRight, Layers3 } from "lucide-react"
 import { Button } from "../ui/Button.jsx"
 import { DevelopmentBadge } from "../ui/DevelopmentBadge.jsx"
@@ -5,7 +6,7 @@ import { DevelopmentBadge } from "../ui/DevelopmentBadge.jsx"
 export function PlatformPreview() {
   return (
     <section className="section-space bg-surface border-y border-border">
-      <div className="site-container grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-20 items-center">
+      <FadeIn className="site-container grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-20 items-center">
         <div>
           <p className="eyebrow mb-5">Our product direction</p>
           <h2 className="section-heading">
@@ -49,7 +50,7 @@ export function PlatformPreview() {
             These are development plans, not generally available features.
           </p>
         </div>
-      </div>
+      </FadeIn>
     </section>
   )
 }

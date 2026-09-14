@@ -1,3 +1,4 @@
+import { FadeIn } from "../ui/FadeIn.jsx"
 import { ArrowRight } from "lucide-react"
 
 const steps = [
@@ -16,7 +17,7 @@ const steps = [
 export function HowItWorks() {
   return (
     <section className="section-space border-t border-border">
-      <div className="site-container">
+      <FadeIn className="site-container">
         <p className="eyebrow mb-4">How it works</p>
         <h2 className="section-heading">
           From scattered data to a clearer direction.
@@ -35,7 +36,7 @@ export function HowItWorks() {
             </li>
           ))}
         </ol>
-      </div>
+      </FadeIn>
     </section>
   )
 }
